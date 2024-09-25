@@ -1,0 +1,21 @@
+.img-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20vh;
+    width: auto;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .social-icon-X {
+    height: 75px;
+  }
+  
+  .social-icon-youtube {
+    height: 70px;
+  }
+
+  .social-icon {
+    margin: 10px;
+    max-width: 100%;
+  }
