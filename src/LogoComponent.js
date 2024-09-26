@@ -31,7 +31,7 @@ function LComponent() {
         </a>
       </div>
          </div>
-  );
+  ); 
 }
 
 export default LComponent;

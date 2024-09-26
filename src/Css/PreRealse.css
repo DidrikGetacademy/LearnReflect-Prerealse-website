@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; 
 }
 
 .PreReleaseContainer {
@@ -9,7 +9,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
   min-width: 100vw;
   background-color: black;
   background-size: cover;
@@ -21,8 +20,7 @@
   display: block;
   margin: 0 auto;
   text-align: center;
-  width: 90%;
-  max-width: 1000px; 
+  width: 90vw;
   height: 80vh; 
   overflow-y: scroll;
   scroll-behavior: smooth;
@@ -36,11 +34,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  height: 95%;
+  height: 100%;
   font-size: 1em;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   z-index: 3;
-  opacity: 0;
+  opacity: 1;
   animation: fadeInUp 2s ease forwards;
   position: relative;
 }
@@ -135,14 +133,15 @@ img.AI1 {
 }
 
 h3 {
-  color: white;
+  color: grey;
   z-index: 2;
   font-size: clamp(1.5rem, 5vw, 3em); 
-  top: 13vh;
   position: relative;
+  margin-top: 2px;
+
   display: flex;
   text-align: center; 
-  margin-bottom: 20px; 
+  font-size: x-large;
   justify-content: center;
   font-style: italic  ;
 }
@@ -161,5 +160,28 @@ h2 {
 }
 
 
+
+
+
+
+.Whitelist {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 20px auto; /* This adds vertical spacing */
+}
+@media (max-width: 768px) {
+  .Whitelist {
+    margin: 15px 0; /* Adjust for smaller screens */
+  }
+}
+
+
+.P-EarlyAccess{
+  color: grey;
+  width: 375px;
+  font-size: large;
+}
 
 
