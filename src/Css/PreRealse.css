@@ -169,11 +169,11 @@ h2 {
   display: flex;
   align-items: center;
   position: relative;
-  margin: 20px auto; /* This adds vertical spacing */
+  margin: 40px auto; /* Increased vertical spacing */
 }
 @media (max-width: 768px) {
   .Whitelist {
-    margin: 15px 0; /* Adjust for smaller screens */
+    margin: 25px 0; /* Adjust for smaller screens */
   }
 }
 

@@ -1,10 +1,10 @@
 .collaboration {
     color: white;
     display: flex;
-    justify-content: space-between; /* Spre elementene utover */
+    justify-content: space-between; 
     align-items: center;
     width: 100%;
-    padding: 0 5%; /* Gir mellomrom fra kantene */
+    padding: 0 5%; 
 }
 
 .BottomNavBar-Container {
@@ -28,6 +28,17 @@ ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
-  width: 25%; /* Sett bredde til 25% */
+  width: auto; 
   text-align: center;
+  font-size: large;
+
 }
+
+img {
+  height: 60px;
+  width: auto;
+  justify-content: space-between;
+  padding: 9px;
+  cursor: pointer;
+}
+
