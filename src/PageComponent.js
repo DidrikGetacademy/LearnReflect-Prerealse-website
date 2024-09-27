@@ -2,12 +2,12 @@ import React from "react";
 import "./Css/PreRealse.css";
 import AI1 from "./Images/AI1.png";
 import LComponent from "./LogoComponent";
-import Whitelist from "./WhiteListComponent";import Bottomnavbar from "./BottomNavbar";
+import Whitelist from "./WhiteListComponent";
+import Bottomnavbar from "./BottomNavbar";
 
 function Page() {
   return (
     <div>
-
       <div className="scroll-page">
         <h3>LearnReflect's under Development</h3>{" "}
         <div className="PreReleaseContainer">
@@ -30,7 +30,7 @@ function Page() {
                 Build discipline & stay motivated.<br /> Our suite of AI-driven
                 tools includes routine planners and personalized motivation
                 strategies. The LR-Chatbot is pre-trained for self-improvement
-                and will continuously learn from your conversations, becoming 
+                and will continuously learn from your conversations, becoming
                 tailored to your specific goals. Over time, you'll have your own
                 AI assistant that knows you, guiding you with personalized
                 discipline-building techniques to help you stay focused on your
@@ -46,12 +46,14 @@ function Page() {
                 becoming the best version of yourself.
               </p>
               <p>
-              And coming soon, the LearnReflect Store will provide you with exclusive products, resources, and tools designed to support your self-improvement journey. Stay tuned for exciting offerings!
+                And coming soon, the LearnReflect Store will provide you with
+                exclusive products, resources, and tools designed to support
+                your self-improvement journey. Stay tuned for exciting
+                offerings!
               </p>
               <img className="AI1" alt="AI4" src={AI1} />
+              <Bottomnavbar />
             </div>
-            <div className="scroll-page" />
-            <Bottomnavbar />
           </div>
         </div>
       </div>

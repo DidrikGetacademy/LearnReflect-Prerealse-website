@@ -25,7 +25,7 @@ function Whitelist() {
     setLoading(true);
 
     axios
-      .post("https://learnreflects.com/Server/save_email.php", {
+      .post("https://learnreflects.com/Server/save_email_with_spamblock.php", {
         email: EmailInput
       })
       .then(response => {
@@ -60,7 +60,7 @@ function Whitelist() {
         <button className="submitbutton" type="submit" disabled={loading}>
           {loading ? "Sending..." : "Get Early Access"}
         </button>
-        {Errormsg && <p  className="error-message">{Errormsg}</p>}
+        {Errormsg && <p  className="error-message">{Errormsg}  <button>Close</button></p>}
       </form>
 
       {EmailConfirmation &&

@@ -10,13 +10,23 @@
 }
 
 .video-intro video {
-  object-fit: cover; /* Adjusts video to cover the area */
+  object-fit: cover;
   justify-content: center;
   object-fit: cover;
 }
 
 @media (max-width: 768px) {
   .video-intro video {
-    object-fit: contain; /* Adjusts video scaling for smaller screens */
+    object-fit: contain; 
   }
+}
+
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+.fade-in.visible {
+  opacity: 1; 
 }

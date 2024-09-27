@@ -1,12 +1,3 @@
-.collaboration {
-    color: white;
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;
-    width: 100%;
-    padding: 0 5%; 
-}
-
 .BottomNavBar-Container {
   width: 100%;
   height: 250px;
@@ -18,10 +9,21 @@
   z-index: 2;
 }
 
+.collaboration {
+  color: white;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  width: auto;
+  overflow: hidden;
+  padding: 0 5%; 
+}
+
 .collab {
-    font-size: large;
-    text-align: center;
-    width: 100%;
+  font-size: large;
+  text-align: center;
+  width: 100%;
+  overflow: hidden;
 }
 
 ul {
@@ -31,14 +33,28 @@ ul {
   width: auto; 
   text-align: center;
   font-size: large;
-
 }
 
 img {
-  height: 60px;
+  height: 60px; 
   width: auto;
   justify-content: space-between;
   padding: 9px;
   cursor: pointer;
 }
 
+@media (max-width: 768px) {
+  img {
+    height: 40px; 
+    width: auto;
+  }
+
+  .collaboration {
+    flex-direction: column; 
+    align-items: center;
+  }
+
+  ul {
+    font-size: medium; 
+  }
+}
