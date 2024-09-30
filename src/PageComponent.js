@@ -4,7 +4,7 @@ import AI1 from "./Images/AI1.png";
 import LComponent from "./LogoComponent";
 import Whitelist from "./WhiteListComponent";
 import Bottomnavbar from "./BottomNavbar";
-
+import LRlogo from './Images/12.png';
 function Page() {
   return (
     <div>
@@ -16,6 +16,7 @@ function Page() {
               {" "}Empowering Your Self-Development Journey with Cutting-Edge AI
             </h1>
             <br />
+            <img className="LR-LOGO" src={LRlogo} alt="LR-Logo"/>
             <div className="Whitelist">
               <Whitelist />
             </div>

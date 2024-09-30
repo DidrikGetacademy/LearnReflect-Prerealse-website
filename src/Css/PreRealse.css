@@ -170,7 +170,7 @@ h2 {
   display: flex;
   align-items: center;
   position: relative;
-  margin: 40px auto; /* Increased vertical spacing */
+  margin: auto; /* Increased vertical spacing */
 }
 @media (max-width: 768px) {
   .Whitelist {
@@ -186,3 +186,28 @@ h2 {
 }
 
 
+.Donation{
+
+
+}
+
+
+.Donation-button{
+  border-radius: 30px;
+  height: 80px;
+  width: 50vh;
+  text-align: center;
+  font-size: 1.7em;
+  background-color: black;
+  color: white;
+  border-color: white;
+  margin: 2px solid white
+  ;
+}
+
+
+.LR-LOGO{
+height: 25%;
+margin-top: 130px;
+align-items: center;
+justify-content: center;}

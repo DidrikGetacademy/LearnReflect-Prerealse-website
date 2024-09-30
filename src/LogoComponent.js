@@ -12,12 +12,12 @@ function LComponent() {
     <div className="img-container">
       <div className="social-icon-container">
         <a href="https://www.tiktok.com/@learnreflectmotivation?is_from_webapp=1&sender_device=pc">
-          <img src={tiktok} alt="TikTok Logo" className="social-icon" />
+          <img src={tiktok} alt="TikTok Logo" className="social-icon-tiktok" />
         </a>
       </div>
       <div className="social-icon-container">
         <a href="https://www.https://www.instagram.com/learnreflects">
-          <img alt="Instagram" src={Instagram} className="social-icon" />
+          <img alt="Instagram" src={Instagram} className="social-icon-instagram" />
         </a>
       </div>
       <div className="social-icon-container">

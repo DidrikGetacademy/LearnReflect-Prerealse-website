@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Css/Whitelist.css";
-import EarlyAccess from "./Earlyaccess";
 function Whitelist() {
   const [EmailInput, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
@@ -74,7 +73,7 @@ function Whitelist() {
           </div>
         </div>}
       <p className="P-EarlyAccess">
-        <EarlyAccess />
+
       </p>
     </div>
   );

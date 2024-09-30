@@ -119,9 +119,7 @@ p {
     display: flex;
     background-color: grey;
     width: 250px;
-    height: 240px;
-    
-
+    height: 100px
   }
 
   .EarlyAccess{
