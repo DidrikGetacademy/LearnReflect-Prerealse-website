@@ -1,0 +1,82 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.menubar {
+    display: flex;
+    flex-direction: column; /* Stabler ul-elementene vertikalt */
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    height: 40vh; /* Responsiv høyde */
+    width: 60vw;  /* Responsiv bredde */
+    position: relative;
+    text-align: center;
+    gap: 2vh; /* Mellomrom mellom ul-elementene */
+
+}
+
+.Menubar-list ul {
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    width: 90%; /* Responsiv bredde, relativ til menubar */
+    padding: 2vh; /* Responsiv padding */
+    background-color: black;
+    font-feature-settings: "aalt";
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-variant: inherit;
+    color: white;
+    border: 2px solid white;
+    cursor: pointer;
+    margin: 1vh 0; /* Mellomrom mellom ul-elementene */
+    list-style: none; /* Fjerner standard bullets fra ul */
+}
+
+.Menubar-list li {
+    text-align: left; /* Justerer tekst på li-elementene */
+    padding: 1vh 2vw; /* Responsiv padding */
+}
+
+ul{
+align-items: center;
+justify-content: center;
+width: 100%;
+color: black;
+justify-content: space-between;
+padding: 2vh;
+border: 2px solid white;
+color: white;
+
+}
+
+
+.Description{
+    width: auto;
+    height: auto;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Description-overlay{
+    
+}
+
+.Description p{
+    font-size: medium;
+    z-index: 3;
+    
+}
+
+h2{
+    font-size: medium;
+}
+
