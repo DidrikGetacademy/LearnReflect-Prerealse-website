@@ -1,4 +1,6 @@
 php-server\config.php
 php-server\vendor
 php-server\.env
-LearnReflect-Prerealse-website\node_modules
+node_modules
+# .gitignore
+node_modules/
