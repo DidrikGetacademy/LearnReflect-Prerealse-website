@@ -1,0 +1,11 @@
+.checkout{
+    z-index: 2;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    height: 200px;
+    width:200px;
+    position: relative;
+}
+
+
