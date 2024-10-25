@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .img-container {
     display: flex;
     justify-content: center;
@@ -23,4 +24,31 @@
     height: 70px;
   }
 
+=======
+.img-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20vh;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .social-icon-X {
+    height: 75px;
+  }
+  
+  .social-icon-youtube {
+    height: 70px;
+  }
+
+  .social-icon-instagram {
+    height: 70px;
+
+  }
+  .social-icon-tiktok {
+    height: 70px;
+  }
+
+>>>>>>> e92031d0 (updated github)
   
