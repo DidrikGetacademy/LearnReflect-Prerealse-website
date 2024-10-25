@@ -5,7 +5,7 @@ header("Access-Control-Allow-Headers: Content-Type, Authorization");
 header("Access-Control-Allow-Credentials: true");
 $hostname = 'learnreflects.com.mysql'; 
 $username = 'learnreflects_comlearnreflects'; 
-$password = 'FuckOff123'; 
+$password = 'JegErBest2304'; 
 $database = 'learnreflects_comlearnreflects'; 
 
 // Create connection

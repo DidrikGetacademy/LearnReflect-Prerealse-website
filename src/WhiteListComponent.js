@@ -6,43 +6,57 @@ function Whitelist() {
   const [loading, setLoading] = useState(false);
   const [EmailConfirmation, setEmailConfirmation] = useState(false);
   const [Errormsg, setErrormsg] = useState("");
-  const Handlesubmit = e => {
-    e.preventDefault();
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    useEffect( () => {
+
+
+
+  const Handlesubmit = async e => {
+    e.preventDefault(); // forhindrer standard oppførsel
+    
+    setLoading(true); //forhindrer mulighet til og trykke på submit
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // email verifikasjon karakterer
+
+    // logger boolean verdi til emailconfirmation på hver render
+    useEffect(() => {
       console.log("Emailconfirmation value:", EmailConfirmation)
-    },[EmailConfirmation]);
+    }, [EmailConfirmation]);
 
-
+    // hvis felt er tomt, gir beskjed til bruker med alert.
     if (EmailInput === "") {
-      alert("Email is required");
+      setErrormsg("Email is required!");
+      setLoading(false);
       return;
     }
-
+    // hvis felt er tomt, gir beskjed til bruker med alert.
     if (!emailRegex.test(EmailInput)) {
-      alert("Please enter a valid email address");
+      setErrormsg("Please enter a valid email address");
+      setLoading(false);
       return;
     }
 
-    setLoading(true);
 
-    axios.post("https://learnreflects.com/Server/save_email_with_spamblock.php", {
-        email: EmailInput
-      })
-      .then(response => {
-        console.log(response.data);
+    try {
+      const response = await axios.post('https://learnreflects/Server/save_email_with_spamblock.php',
+        { email: EmailInput }
+      );
+
+      if (response.status === 200 && response.data.message === "Valid") {
         setEmailConfirmation(true);
         setEmail("");
-        setLoading(false);
-      })
-      .catch(err => {
-        console.log(err.response ? err.response.data : err.message);
-        setErrormsg(err.response ? err.response.data.error : "An unexpected error occurred") 
-        setLoading(false);
-      })
-  };
+        setErrormsg("");
+      } else {
+        setErrormsg(response.data.error || "An unexpected error occurred!");
+      }
+    } catch (err) {
+      console.log(err.response ? err.response.data : err.message)
+      setErrormsg(err.response ? err.response.data : "an unexpected error occured!");
+    } finally {
+      setLoading(false);
+    }
+  }
+
 
   const handleinput = event => {
     setEmail(event.target.value);
@@ -52,7 +66,7 @@ function Whitelist() {
     setEmailConfirmation(false);
   };
 
-  
+
   return (
     <div className="whitelist-container">
       <form className="EmailForm" onSubmit={Handlesubmit}>
@@ -65,7 +79,7 @@ function Whitelist() {
         <button className="submitbutton" type="submit" disabled={loading}>
           {loading ? "Sending..." : "Get Early Access"}
         </button>
-        {Errormsg && <p  className="error-message">{Errormsg}  <button>Close</button></p>}
+        {Errormsg && <p className="error-message">{Errormsg}  <button>Close</button></p>}
       </form>
 
       {EmailConfirmation &&

@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             if ($conn->query($sql) === TRUE) {
                 http_response_code(200);
-                echo json_encode(["message" => "Email saved successfully"]);
+                echo json_encode(["message" => "Valid"]);
             } else {
                 http_response_code(500);
                 echo json_encode(["error" => "Failed to save email: " . $conn->error]);
