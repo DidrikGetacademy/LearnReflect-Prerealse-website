@@ -30,18 +30,18 @@ span{
 .title-span {
     cursor: pointer;
     width: 100%;
-    display: block; /* Sørger for at hele området er klikkbart */
-    text-align: center; /* Sentrerer teksten */
-    padding: 10px; /* Lagt til litt padding */
-    background-color: black; /* Valgfritt: endre bakgrunnsfarge */
-    border-radius: 5px; /* Valgfritt: avrundede kanter */
+    display: block; 
+    text-align: center; 
+    padding: 10px; 
+    background-color: black; 
+    border-radius: 5px; 
     color: white;
     font-style: normal;
     font-size: large;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .title-span:hover {
-    background-color: rgba(51, 77, 77, 0.2); /* Lysere bakgrunn ved hover */
+    background-color: rgba(51, 77, 77, 0.2); 
 
 }
 
@@ -51,28 +51,55 @@ span{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* Ensures modal is vertically centered */
+    height: 100vh; 
 }
 
 .Modal .modal-content {
-    height: 750px; /* Set the modal height to 750px */
-    max-width: 100%; /* Ensures it fits within the viewport */
+    height: 750px; 
+    max-width: 100%; 
     margin: auto;
 }
 
 .Modal .modal-body {
-    overflow-y: auto; /* Add scroll if content exceeds height */
+    overflow-y: auto; 
 }
 .Modal.fade .modal-dialog {
-    transition: transform 0.3s ease-out, opacity 0.3s ease-out; /* Default transition */
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out; 
 }
 
 .Modal.fade.show .modal-dialog {
-    transform: none; /* Ensures modal is shown properly */
+    transform: none; 
     opacity: 1;
 }
 
 .Modal.fade .modal-dialog {
-    transform: translate(0, -25%); /* Initial position before the fade */
-    opacity: 0; /* Initial opacity before fade in */
+    transform: translate(0, -25%); 
+    opacity: 0; 
+}
+
+
+
+@media (max-width: 768px) {
+    .MenuBar-Container {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .title-span {
+        font-size: medium;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 576px) {
+    .MenuBar-Container {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .title-span {
+        text-align: center;
+        font-size: small;
+    }
 }

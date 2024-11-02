@@ -10,8 +10,20 @@ const CheckDatabaseConnection = () => {
 
                 if (response.ok) {
                     console.log(result.message); // Logs 'Database connected successfully' if connection works
+                    return (
+                        <div>
+                            <h1>Check Database Connection</h1>
+                            <p>Database connection ok</p>
+                        </div>
+                    );
                 } else {
                     console.error(result.error); // Logs the error message if connection fails
+                    return (
+                        <div>
+                            <h1>Check Database Connection</h1>
+                            <p>Database connection FAIL</p>
+                        </div>
+                    );
                 }
             } catch (error) {
                 console.error("Error:", error); // Catches network or other errors
@@ -22,11 +34,7 @@ const CheckDatabaseConnection = () => {
         checkConnection();
     }, []);
 
-    return (
-        <div>
-            <h1>Check Database Connection</h1>
-        </div>
-    );
+ 
 };
 
 export default CheckDatabaseConnection;

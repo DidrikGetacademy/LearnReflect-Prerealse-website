@@ -7,21 +7,21 @@ function Whitelist() {
   const [EmailConfirmation, setEmailConfirmation] = useState(false);
   const [Errormsg, setErrormsg] = useState("");
 
+  useEffect(() => {
+    console.log("Emailconfirmation value:", EmailConfirmation)
+  }, [EmailConfirmation]);
 
 
 
 
   const Handlesubmit = async e => {
     e.preventDefault(); // forhindrer standard oppførsel
-    
+
     setLoading(true); //forhindrer mulighet til og trykke på submit
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // email verifikasjon karakterer
 
     // logger boolean verdi til emailconfirmation på hver render
-    useEffect(() => {
-      console.log("Emailconfirmation value:", EmailConfirmation)
-    }, [EmailConfirmation]);
 
     // hvis felt er tomt, gir beskjed til bruker med alert.
     if (EmailInput === "") {
@@ -38,16 +38,19 @@ function Whitelist() {
 
 
     try {
-      const response = await axios.post('https://learnreflects/Server/save_email_with_spamblock.php',
+      const response = await axios.post('https://learnreflects.com/Server/save_email_with_spamblock.php',
         { email: EmailInput }
       );
 
-      if (response.status === 200 && response.data.message === "Valid") {
+      if (response.status === 200) {
         setEmailConfirmation(true);
         setEmail("");
         setErrormsg("");
       } else {
         setErrormsg(response.data.error || "An unexpected error occurred!");
+        if(response.data.error   === 500 && response.err.message === "Failed to save email: "){
+          alert('status 500');
+        }
       }
     } catch (err) {
       console.log(err.response ? err.response.data : err.message)

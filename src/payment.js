@@ -10,7 +10,7 @@ function Payment() {
     return (
         
         <PayPalScriptProvider options={initialoptions}>
-            <Checkout />
+            <Checkout/>
         </PayPalScriptProvider>
     )
 }

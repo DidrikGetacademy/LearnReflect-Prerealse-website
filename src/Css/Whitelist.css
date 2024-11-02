@@ -11,7 +11,7 @@
 }
 
 .modal {
-  display: flex;
+  display: block;
   position: relative;
   z-index: 999;
   left: 0;

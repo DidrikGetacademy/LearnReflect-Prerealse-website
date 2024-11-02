@@ -48,7 +48,7 @@ export default function MenuBar() {
                                             handleShow(item.title, item.action);
                                         }
                                         if (item.title === 'AI Video Enhancer') {
-                                            Setisinstock(false);
+                                            Setisinstock(true);
                                         }
                                     }}
                                     className="title-span">
