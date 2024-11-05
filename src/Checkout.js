@@ -22,7 +22,19 @@ function Checkout() {
 
     const onApprove = (data, actions) => {
         return actions.order.capture().then((details) => {
-            const name = details.payer.name.given_name; alert(`Transaction completed by ${name}`);
+            const name = details.payer.name.given_name; console.log(name);
+            const email = details.payer.name.email_address; console.log(email);
+
+            fetch("https://learnreflects.com/Server/Generate_PrivateKey.php", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({email: email, amount: "20.00"})
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(`Transaction completed by ${name}. your activasion key is: ${data.key_code}`);
+            })
+            .catch(error => console.error("Error generating key:", error));
         });
     };
 
