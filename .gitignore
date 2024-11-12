@@ -1,2 +1,5 @@
 node_modules/
 php-server/config.php
+composer.json
+composer.lock
+vendor/
