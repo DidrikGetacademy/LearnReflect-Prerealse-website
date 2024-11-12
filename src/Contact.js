@@ -2,14 +2,18 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './Css/Contact.css';
 import { useNavigate } from 'react-router-dom';
+import Modal from './RequestSubmittedModal';
 function ContactNavBar() {
   const [email, setEmail] = useState("");
   const [category, setcategory] = useState("");
   const [loading, setLoading] = useState(false);
   const [description, setDescription] = useState("");
+  const [ModalStatus, setModelStatus] = useState(false);
   const Navigate = useNavigate();
 
-  
+
+
+
   const HandleChange = async (event) => {
     event.preventDefault();
     setLoading(true);
@@ -19,23 +23,34 @@ function ContactNavBar() {
         Category: category,
         Description: description,
       })
-      console.log('Response',response.data)
-    } catch(error){
-      console.error('error.',error);
+      console.log('Response', response.data)
+    } catch (error) {
+      console.error('error.', error);
 
     } finally {
+      setModelStatus(true);
       setLoading(false);
       setEmail("");
-      return( alert("success"));
+      setcategory("");
+      setDescription("");
     }
   }
+
+
+
+  const CloseModal = () => {
+    setModelStatus(false);
+    Navigate('/');
+  }
+
+
 
   return (
     <div className='ContactDiv'>
       <form onSubmit={HandleChange}>
         <label>Support Request</label>
-        <input  onChange={(e) => setEmail(e.target.value)} placeholder='Email Address' type='Email' required />
-        <select value={category} onChange={(e) =>  setcategory(e.target.value)} required>
+        <input onChange={(e) => setEmail(e.target.value)} placeholder='Email Address' type='Email' required />
+        <select value={category} onChange={(e) => setcategory(e.target.value)} required>
           <option value="" disabled>select an option</option>
           <option value="Business">Business</option>
           <option value="Account">Account & Security</option>
@@ -44,10 +59,12 @@ function ContactNavBar() {
         <textarea onChange={(e) => setDescription(e.target.value)} className='Description' placeholder='Skriv din beskrivelse her...' required>
 
         </textarea>
-        <button  disabled={loading}  type='submit'>{loading ? 'Loading...' : 'Submit'}</button>
-        <button onClick={() => Navigate("/") }>Cancel</button>
+        <button disabled={loading} type='submit'>{loading ? 'Loading...' : 'Submit'}</button>
+        <button onClick={() => Navigate("/")}>Cancel</button>
       </form>
+      {ModalStatus && <Modal message="Contact Request submitted successfully!" onClose={CloseModal} />}
     </div>
   );
 }
-export default ContactNavBar; 
+export default ContactNavBar;
+

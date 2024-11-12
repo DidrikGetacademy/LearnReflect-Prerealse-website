@@ -1,5 +1,4 @@
 import React from 'react';
-import { CookiesProvider } from 'react-cookie';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './Css/App.css'
 import PageComponent from './PageComponent.js'
@@ -9,8 +8,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Payment from './payment.js';
 function App() {
   return (
-    <CookiesProvider>
-
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MenuBar/>} />
@@ -19,7 +16,6 @@ function App() {
         <Route path="/Payment" element={<Payment/>} /> 
       </Routes>
     </BrowserRouter>
-    </CookiesProvider>
   );
 }
 

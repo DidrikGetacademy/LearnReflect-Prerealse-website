@@ -82,3 +82,6 @@ label {
     cursor: pointer;
 }
 
+.EmailInput{
+    width: 50%;
+}
