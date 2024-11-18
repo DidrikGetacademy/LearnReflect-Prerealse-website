@@ -20,15 +20,16 @@ header("Access-Control-Allow-Headers: Content-Type");
 header("Access-Control-Allow-Credentials: true");
 header('Content-Type: application/json');
 
-if($_SERVER['REQUEST_METHOD' == 'OPTIONS']){
+if($_SERVER['REQUEST_METHOD'] == 'OPTIONS'){
     exit(0);
 }
 // Include necessary files
 include 'config.php';
 require 'vendor/autoload.php';
+require 'send_email.php';
 
 // Error reporting
-error_reporting(E_ALL);  // Disable error reporting
+error_reporting(E_ALL); 
 ini_set('memory_limit', '2048M');
 ini_set('log_errors', 1);
 ini_set('error_log', 'error_log.txt');
@@ -153,11 +154,12 @@ try {
             #ERROR LOG
             error_log('Key_code inserted into the database table: ' . $key_code);
             echo json_encode(['key_code' => $key_code]);
-            #ERROR LOG
-            error_log('Response sent to frontend: Key code generated' . $key_code);
+            error_log('Send back keycode to frontend, now sending email.');
+            $name = "Customer";
+            $mailTo = $email;
+            SendMail($mailTo,$name,$key_code);
             exit;
         } else {
-            // Log the error and send a failure response
             #ERROR LOG
             error_log("Failed to insert key into the database.");
             echo json_encode(['status' => 'error', 'message' => 'Database insert failed']);
@@ -177,6 +179,7 @@ try {
     echo json_encode(["error" => "An unexpected error occurred."]);
     exit;
 } finally {
+ 
     // Clean up the statement and connection
     if (isset($stmt)) $stmt->close();
     if (isset($conn)) $conn->close();

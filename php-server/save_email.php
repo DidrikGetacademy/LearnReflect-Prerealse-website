@@ -10,39 +10,39 @@ include 'error_log.txt';
 include 'error_log.php';
 
 
-// Enable error reporting for development
+
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
-ini_set('log_errors', 1); // Enable error logging
-ini_set('error_log', 'error_log.txt'); // Point to the correct log file
+ini_set('log_errors', 1); 
+ini_set('error_log', 'error_log.txt'); 
 
-// Create a connection using the credentials from config.php
+
 $conn = new mysqli($hostname, $username, $password, $database);
 
-// Check connection
+
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error); 
 }
 
-// Handle the POST request
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Get the posted data
+ 
     $data = json_decode(file_get_contents("php://input"));
 
     if (!empty($data->email)) {
         $email = $conn->real_escape_string($data->email);
 
-        // Check if the email already exists in the database
+ 
         $checkEmailQuery = "SELECT * FROM email_registration WHERE email = '$email'";
         $result = $conn->query($checkEmailQuery);
 
         if ($result->num_rows > 0) {
-            // Email already exists
-            http_response_code(409); // Conflict
+
+            http_response_code(409); 
             echo json_encode(["error" => "Email is already registered."]);
         } else {
-            // Prepare an SQL statement to insert email into the email_registration table
+         
             $sql = "INSERT INTO email_registration (email) VALUES ('$email')";
 
             if ($conn->query($sql) === TRUE) {
