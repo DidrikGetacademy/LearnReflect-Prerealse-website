@@ -1,16 +1,25 @@
+# Node.js dependencies
 node_modules/
+
+# PHP server configuration
 php-server/config.php
+
+# Composer files
 composer.json
 composer.lock
 vendor/
-build/static/css/main.61ff7f1f.css
-build/static/css/main.61ff7f1f.css.map
-build/static/js/main.d646b72b.js
-build/static/js/main.d646b72b.js.LICENSE.txt
-build/static/js/main.d646b72b.js.map
-build/static/media/Oppskalert1.fbf0d0d3e27bc644de4e.png
-build/static/media/Oppskalert2.9c511a739a58149e126a.png
-build/static/media/bedre.b81bf348fee452aa981f.jpg
-build/static/media/left.043cc86deb54ca776173.jpg
-build/static/media/right.f6189502d7f5e2f635d5.jpg
-build/static/media/software.5ca176cefa81da11d8cf.png
+
+# Build files
+build/static/css/*.css
+build/static/css/*.css.map
+build/static/js/*.js
+build/static/js/*.LICENSE.txt
+build/static/js/*.js.map
+
+# Media files
+build/static/media/*.png
+build/static/media/*.jpg
+
+# Ignore all build files but include the main index.html if needed
+build/*
+!build/index.html
