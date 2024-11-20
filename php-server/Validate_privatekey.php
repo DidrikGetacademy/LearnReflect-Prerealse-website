@@ -72,3 +72,4 @@ if ($result->num_rows > 0) {
 $stmt->close();
 $conn->close();
 ob_end_flush();
+?>
