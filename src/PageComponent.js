@@ -7,7 +7,7 @@ import Bottomnavbar from "./BottomNavbar";
 import LRlogo from './Images/12.png';
 function Page() {
   return (
-    <div>
+    <div className="pagecomponent">
       <div className="scroll-page">
         <h3>LearnReflect's under Development</h3>{" "}
         <div className="PreReleaseContainer">

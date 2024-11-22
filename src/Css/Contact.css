@@ -3,7 +3,8 @@
     max-width: 500px; /* Maximum width for larger screens */
     width: 50vw; /* Use 90% width to allow for padding on smaller screens */
     height: auto; /* Allow height to adjust automatically */
-    background-color: white;
+    background-color: black;
+    opacity: 0.9;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,17 +18,23 @@
 label {
     text-align: center;
     margin-bottom: 10px;
+    
 }
 
 select {
     margin-bottom: 10px;
     font-size: medium;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: black;
+    opacity: 0.9;
+    color: white;
 }
 
 input {
     text-align: center;
     margin-bottom: 10px;
+    background-color: black;
+    color: white;
 }
 
 form {
@@ -35,6 +42,8 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: black;
+    opacity: 0.9;
 }
 
 button {
@@ -45,6 +54,7 @@ button {
     border-radius: 12px;
     margin-top: 10px;
     font-size: 1rem; /* Base font size for buttons */
+
 }
 
 .Description {
@@ -55,6 +65,8 @@ button {
     padding: 10px;
     resize: none;
     overflow: auto;
+    background-color: black;
+    color: white;
 }
 
 /* Responsive Design Adjustments */

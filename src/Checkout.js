@@ -97,7 +97,7 @@ function Checkout() {
 
 
     return (
-        <div style={{ display: "flex", alignItems: "center", height: "100vh", width: "100vw", justifyContent: "center" }}>
+        <div style={{ display: "flex", alignItems: "center", height: "100vh", width: "100vw", justifyContent: "center", overflow: "hidden", scrollBehavior: "none"}}>
             <img className="stuker" alt="background" src={upscaled} />
             <div className="checkout">
                 <ImageCarousel />

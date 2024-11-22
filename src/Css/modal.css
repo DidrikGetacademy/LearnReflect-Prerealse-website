@@ -13,18 +13,21 @@
   }
   
   .modal-content {
-    background: white;
+    background: black;
     padding: 20px;
     border-radius: 8px;
     text-align: center;
     width: 90%; /* Make modal width responsive */
     max-width: 400px; /* Set a maximum width */
     align-items: center;
+    opacity: 0.9;
+    color: white;
     
   }
   
   h2 {
     font-size: 1.5rem; /* Responsive font size for the heading */
+    color: white;
   }
   
   .ModalButton {

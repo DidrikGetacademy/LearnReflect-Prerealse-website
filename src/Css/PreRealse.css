@@ -2,6 +2,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box; 
+  
+}
+.pagecomponent{
+  background-color: black;
+opacity: 0.9;
+height: 100vh;
+width: 100vw;
 }
 
 .PreReleaseContainer {
@@ -9,12 +16,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-width: 100vw;
+
   background-color: black;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
+
+ 
 }
 
 .scroll-container {
@@ -28,6 +37,7 @@
   top: 5vh;
   position: relative;
   z-index: 3;
+  
 }
 
 .scroll-page {
