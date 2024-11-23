@@ -19,28 +19,47 @@ if($conn->connect_error){
     error_log("Database connection failed");
 }
 
-$data = json_decode(file_get_contents("php://input"));
+$data = json_decode(file_get_contents("php://input"),true);
 
-if(!$email || $password){
-
+$email = $data['email'] ?? null;
+$password = $data['password'] ?? null;
+ 
+if(!$email || !$password){
     http_response_code(400);//bad request
+    error_log("Email and password are required");
     echo json_encode(["message" => "Email and password are reqired"]);
     exit;
 } 
 
-$stmt = $conn->prepare("SELECT password FROM users WHERE email = ?");
+$stmt = $conn->prepare("SELECT id, name, email, subscription_type, password FROM users WHERE email = ?");
 $stmt->bind_param("s",$email);
 $stmt->execute();
-$stmt->bind_result($hashed_password);
+$result = $stmt->get_result();
 
-if($stmt->fetch() && password_verify($password,$hashed_password)){
-    http_response_code(200);
-    echo json_encode(["message" => "Login successful."]);
-    error_log("Successful login");
+if($result->num_rows > 0){
+    $user =  $result->fetch_assoc(); // henter brukerdata
+    
+    if(password_verify($password,$user['password'])){
+        http_response_code(200);
+        echo json_encode([
+            'id' => $user['id'],
+            'name' => $user['name'],
+            'email' => $user['email'],
+            'subscription_type' => $user['subscription_type'],
+            'message" => "Success'
+        ]);
+        error_log("Successful login");
+        
+    }else {
+        http_response_code(401); // unautorizhed
+        echo json_encode(["message" => "Invalid credentials"]);
+        error_log("Invalid Credentials for email: " . $email);
+    }
 }else {
-    http_response_code(401);
+    http_response_code(401); // unautorizhed
     echo json_encode(["message" => "Invalid credentials"]);
-    error_log("Invalid Credentials");
+    error_log("Invalid Credentials for email: ". $email);
 }
 $stmt->close();
+$conn->close();
 ?>

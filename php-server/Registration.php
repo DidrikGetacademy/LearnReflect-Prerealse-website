@@ -97,7 +97,7 @@ try {
         http_response_code(201); //Success response
         echo json_encode([
             "success" => true,
-            "message" => "User registred successfully"
+            "message" => "success"
         ]);
         error_log("Success! email registred in database successfully.");
     } else {
