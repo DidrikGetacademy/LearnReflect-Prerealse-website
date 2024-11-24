@@ -15,13 +15,14 @@ ini_set('error_log', 'error_log.txt'); // Point to the correct log file
 
 $data = json_decode(file_get_contents('php://input'), true);
 
-if (!isset($data['key_code'])) {
-    echo json_encode(["success" => false, "error" => "Missing key_code"]);
-    error_log("Error missing key_code");
+if (!isset($data['key_code']) || !isset($data['user_id'])) {
+    echo json_encode(["success" => false, "error" => "Missing key_code or user_id"]);
+    error_log("Error missing key_code or user_id");
     ob_end_flush();
     exit();
 }
 $key_code = $data["key_code"];
+$user_id = $data["user_id"];
 
 $conn = new mysqli($hostname, $username, $password, $database);
 
@@ -48,28 +49,56 @@ if ($result->num_rows > 0) {
         return;
     }
 
-    //Update the key's status to 'active' and increment the 'times_used' counter
-    $update_stmt = $conn->prepare("UPDATE activation_keys SET status = 'active', activated_at = NOW(), times_used = times_used + 1 WHERE key_code = ?");
-    $update_stmt->bind_param("s", $key_code);
-    error_log("Activated the key and set as active/used");
-    $update_stmt->execute();
-    $update_stmt->close();
-    echo json_encode(["success" => true]);
+    $subscription_type = $key['subscription_type']; // fetch the subscription type from the database
+    error_log("subscription_type" . $subscription_type);
 
-    error_log("Activated the key and set as active/used");
-    error_log("Success");
-    ob_end_flush();
-    exit();
-} else {
+    #starts the transaction to link the key to the user and update the key's status.
+    $conn->begin_transaction();
+
+
+    try{
+
+        //Update the key's status to 'active' and increment the 'times_used' counter
+        $update_stmt = $conn->prepare("UPDATE activation_keys SET status = 'active', user_id = ?, activated_at = NOW(), times_used = times_used + 1 WHERE key_code = ?");
+        $update_stmt->bind_param("is", $user_id, $key_code);
+        error_log("Activated the key and set as active/used");
+        $update_stmt->execute();
+        $update_stmt->close();
+
+
+        #Updated the key's status to 'active' and increment the time_used counter
+        $subscription_end = ($subscription_type === 'monthly') ? date('Y-m-d H:i:s', strtotime('+1 month')) : null;
+        $update_user_stmt = $conn->prepare("UPDATE user set subscription_type = ?, subscription_end = ? where id = ?");
+        $update_user_stmt-> bind_param('ssi',$subscription_type,$subscription_end,$user_id);
+        $update_user_stmt->execute();
+        $update_user_stmt->close();
+        error_log("Updated the key's status to 'active' and increment the time_used counter");
+        $conn->commit();
+
+        #payload back too python script,
+        echo json_encode(
+[
+                "success" => true,
+                "subscription_type" => $subscription_type,
+                "subscription_end" => $subscription_end
+                ]);
+        
+        error_log("key successfully linked to user and activated");
+    }catch(Exception $e){
+        $conn->rollback();
+        echo json_encode(["success" => false, "error" => "Failed to link key: ". $e->getMessage()]);
+        error_log("Transaction failed: " . $e->getMessage());
+    }
+     $stmt->close();
+     $conn->close();
+     ob_end_flush();
+     exit();
+}else {
     echo json_encode(["success" => false, "error" => "Invalid or already used key"]);
-    error_log("Invalid or already used key!");
+    error_log("Invalid or used key");
+    $stmt->close();
+    $conn->close();
     ob_end_flush();
     exit();
 }
-
-
-
-$stmt->close();
-$conn->close();
-ob_end_flush();
 ?>

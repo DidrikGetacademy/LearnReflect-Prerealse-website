@@ -10,7 +10,9 @@ function Checkout() {
     const [{ options, isPending }, dispatch] = usePayPalScriptReducer();// paypal script reducer manage a way to manage the state of the paypalscript, sutchs as client side with buttons, if a customer choose another currency, reducer will update this.
     const [currency, setCurrency] = useState(options.currency);
     const emailref = useRef("");
-    const PURCHASE_AMOUNT = "20.00";
+    const [subscriptiontype,setsubscriptiontype] = useState("Permanent")
+    
+    const PURCHASE_AMOUNT = subscriptiontype === "monthly" ? "14.99" : "50.00";
 
 
 
@@ -46,7 +48,7 @@ function Checkout() {
             const OrderId = details.id;
             const name = details.payer.name.given_name;
             const email = emailInput || details.payer.email_address;
-
+            const subscription_type = subscriptiontype
 
             if (details.id === '') {
                 console.log('Order_id is empty');
@@ -68,7 +70,7 @@ function Checkout() {
 
             fetch("https://learnreflects.com/Server/Generate_PrivateKey.php", {
                 method: "POST",
-                body: JSON.stringify({ email: email, amount: "20.00", order_id: OrderId }),
+                body: JSON.stringify({subscription_type: subscription_type, email: email, amount: "20.00", order_id: OrderId }),
                 headers: { "Content-Type": "application/json" },
             })
                 .then((response) => response.text())
@@ -94,7 +96,9 @@ function Checkout() {
         });
     };
 
-
+ const handlesubscription = (e) => {
+    setsubscriptiontype(e.target.value)
+ }
 
     return (
         <div style={{ display: "flex", alignItems: "center", height: "100vh", width: "100vw", justifyContent: "center", overflow: "hidden", scrollBehavior: "none"}}>
@@ -103,6 +107,10 @@ function Checkout() {
                 <ImageCarousel />
                 <div className="payment-section">
                     <label>Please choose a payment method below</label>
+                    <select onChange={handlesubscription}>
+                        <option value="monthly">Monthly (subscription) - 11.99 EUR</option>
+                        <option value="Permanent">Permanent (one-time) - 50.00 EUR</option>
+                    </select>
                     {isPending ? (
                         <p>Loading...</p>
                     ) : (

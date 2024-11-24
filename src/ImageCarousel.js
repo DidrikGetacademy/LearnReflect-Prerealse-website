@@ -34,8 +34,8 @@ function ImageCarousel() {
                     <img className="SoftWareImg" src={images[currentindex]} alt="SoftwareIMG" />
                 </div>
                 <div className="navigation-buttons">
-                    <img className="nav-button" src={left} alt="LeftImg" onClick={prevImage} />
-                    <img className="nav-button" src={right} alt="RightImg" onClick={nextImage} />
+                    <button className="nav-button" src={left} onClick={prevImage}>←</button> 
+                    <button className="nav-button" src={right}  onClick={nextImage}>→</button> 
                 </div>
             </div>
         </div>

@@ -86,14 +86,22 @@ try {
     $amount = $data['amount'] ?? null;
     $email = $data['email'] ?? null;
     $order_id = $data['order_id'] ?? null;
+    $subscription_type = $data['subscription_type'] ?? null;
 
     #ERROR LOG
-    error_log("Received data: Amount = " . $amount . ", Email = " . $email . ", Order ID = " . $order_id);
+    error_log("Received data: Amount = " . $amount . ", Email = " . $email . ", Order ID = " . $order_id . "subscription type: ". $subscription_type);
 
     // Validate order ID
     if (!$order_id) {
         error_log("Missing order ID.");
         echo json_encode(["error" => "Missing order ID"]);
+        exit;
+    }
+
+    if (!$subscription_type)
+    {
+        error_log("missing subscription type");
+        echo json_encode("missing subscription type");
         exit;
     }
 
@@ -146,8 +154,8 @@ try {
             exit;
         }
 
-        $stmt = $conn->prepare("INSERT INTO activation_keys (key_code, status, created_at, usage_limit, times_used) VALUES (?, 'unused', NOW(), 1, 0)");
-        $stmt->bind_param("s", $key_code);
+        $stmt = $conn->prepare("INSERT INTO activation_keys (key_code, status, created_at, usage_limit, times_used, subscription_type) VALUES (?, 'unused', NOW(), 1, 0, ?)");
+        $stmt->bind_param("ss", $key_code,$subscription_type);
 
         if ($stmt->execute()) {
             // Respond with only the key code
