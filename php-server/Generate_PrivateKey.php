@@ -134,7 +134,15 @@ try {
     #ERROR LOG
     error_log("Order details: " . print_r($order_details, true));
 
-    $purchase_amount = "20.00";
+    if($subscription_type === 'permanent'){
+        $purchase_amount = "50.00";
+    }elseif($subscription_type === 'monthly'){
+        $purchase_amount = "12.99";
+    }else {
+        error_log("Invalid subscription type: $subscription_type");
+        echo json_encode(["error" => "invalid subscription type"]);
+        exit;
+    }
     #ERROR LOG
     error_log("Expected amount: $purchase_amount, received: " . $order_details->purchase_units[0]->amount->value);
 
