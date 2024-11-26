@@ -1,0 +1,302 @@
+this is a copy from my one.com error_log.txt that provides detail for a successful transaction using paypal. with error logging:
+[26-Nov-2024 12:20:11 UTC] Access Token: A21AAK6m3gujbcg9aE6KybkcdVM9ehMmYHDBy88XV_-u-f8vUfLn33k_Q55Trh4wG6m9RUSKX68Ui7z1_JtWaesM4hkc3GWyQ
+[26-Nov-2024 12:20:11 UTC] Received data: Amount = 50.00, Email = didriknathaniel2@outlook.com, Order ID = 8SW027037D541613Ysubscription type: permanent
+[26-Nov-2024 12:20:11 UTC] Order details: stdClass Object
+(
+    [id] => 8SW027037D541613Y
+    [intent] => CAPTURE
+    [status] => COMPLETED
+    [payment_source] => stdClass Object
+        (
+            [paypal] => stdClass Object
+                (
+                    [email_address] => sb-aedi633426308@personal.example.com
+                    [account_id] => 5ZQDT9WGNGG7U
+                    [account_status] => VERIFIED
+                    [name] => stdClass Object
+                        (
+                            [given_name] => John
+                            [surname] => Doe
+                        )
+
+                    [address] => stdClass Object
+                        (
+                            [country_code] => NO
+                        )
+
+                )
+
+        )
+
+    [purchase_units] => Array
+        (
+            [0] => stdClass Object
+                (
+                    [reference_id] => default
+                    [amount] => stdClass Object
+                        (
+                            [currency_code] => USD
+                            [value] => 50.00
+                        )
+
+                    [payee] => stdClass Object
+                        (
+                            [email_address] => sb-43t8es33446143@business.example.com
+                            [merchant_id] => UXUPHXZ5ULVHQ
+                        )
+
+                    [soft_descriptor] => PAYPAL *TEST STORE
+                    [shipping] => stdClass Object
+                        (
+                            [name] => stdClass Object
+                                (
+                                    [full_name] => John Doe
+                                )
+
+                            [address] => stdClass Object
+                                (
+                                    [address_line_1] => Bryggen 1
+                                    [admin_area_2] => Bergen
+                                    [admin_area_1] => Norge
+                                    [postal_code] => 5003
+                                    [country_code] => NO
+                                )
+
+                        )
+
+                    [payments] => stdClass Object
+                        (
+                            [captures] => Array
+                                (
+                                    [0] => stdClass Object
+                                        (
+                                            [id] => 29S32874G51474440
+                                            [status] => COMPLETED
+                                            [amount] => stdClass Object
+                                                (
+                                                    [currency_code] => USD
+                                                    [value] => 50.00
+                                                )
+
+                                            [final_capture] => 1
+                                            [seller_protection] => stdClass Object
+                                                (
+                                                    [status] => ELIGIBLE
+                                                    [dispute_categories] => Array
+                                                        (
+                                                            [0] => ITEM_NOT_RECEIVED
+                                                            [1] => UNAUTHORIZED_TRANSACTION
+                                                        )
+
+                                                )
+
+                                            [seller_receivable_breakdown] => stdClass Object
+                                                (
+                                                    [gross_amount] => stdClass Object
+                                                        (
+                                                            [currency_code] => USD
+                                                            [value] => 50.00
+                                                        )
+
+                                                    [paypal_fee] => stdClass Object
+                                                        (
+                                                            [currency_code] => USD
+                                                            [value] => 2.00
+                                                        )
+
+                                                    [net_amount] => stdClass Object
+                                                        (
+                                                            [currency_code] => USD
+                                                            [value] => 48.00
+                                                        )
+
+                                                    [receivable_amount] => stdClass Object
+                                                        (
+                                                            [currency_code] => NOK
+                                                            [value] => 509.51
+                                                        )
+
+                                                    [exchange_rate] => stdClass Object
+                                                        (
+                                                            [source_currency] => USD
+                                                            [target_currency] => NOK
+                                                            [value] => 10.614692595
+                                                        )
+
+                                                )
+
+                                            [links] => Array
+                                                (
+                                                    [0] => stdClass Object
+                                                        (
+                                                            [href] => https://api.sandbox.paypal.com/v2/payments/captures/29S32874G51474440
+                                                            [rel] => self
+                                                            [method] => GET
+                                                        )
+
+                                                    [1] => stdClass Object
+                                                        (
+                                                            [href] => https://api.sandbox.paypal.com/v2/payments/captures/29S32874G51474440/refund
+                                                            [rel] => refund
+                                                            [method] => POST
+                                                        )
+
+                                                    [2] => stdClass Object
+                                                        (
+                                                            [href] => https://api.sandbox.paypal.com/v2/checkout/orders/8SW027037D541613Y
+                                                            [rel] => up
+                                                            [method] => GET
+                                                        )
+
+                                                )
+
+                                            [create_time] => 2024-11-26T12:20:09Z
+                                            [update_time] => 2024-11-26T12:20:09Z
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [payer] => stdClass Object
+        (
+            [name] => stdClass Object
+                (
+                    [given_name] => John
+                    [surname] => Doe
+                )
+
+            [email_address] => sb-aedi633426308@personal.example.com
+            [payer_id] => 5ZQDT9WGNGG7U
+            [address] => stdClass Object
+                (
+                    [country_code] => NO
+                )
+
+        )
+
+    [create_time] => 2024-11-26T12:19:47Z
+    [update_time] => 2024-11-26T12:20:09Z
+    [links] => Array
+        (
+            [0] => stdClass Object
+                (
+                    [href] => https://api.sandbox.paypal.com/v2/checkout/orders/8SW027037D541613Y
+                    [rel] => self
+                    [method] => GET
+                )
+
+        )
+
+)
+
+[26-Nov-2024 12:20:11 UTC] Expected amount: 50.00, received: 50.00
+[26-Nov-2024 12:20:11 UTC] Generated Key Code NOT YET sent too frontend: D0F4E5E5667C9B1C
+[26-Nov-2024 12:20:11 UTC] Key_code inserted into the database table: D0F4E5E5667C9B1C
+[26-Nov-2024 12:20:11 UTC] Send back keycode to frontend, now sending email.
+[26-Nov-2024 12:20:11 UTC] SendMail function called for didriknathaniel2@outlook.com
+[26-Nov-2024 12:20:11 UTC] In start of try block didriknathaniel2@outlook.com
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 2: SERVER -> CLIENT: 220 mailout4.pub.mailoutpod2-cph3.one.com ESMTP
+
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 1: CLIENT -> SERVER: EHLO learnreflects.com
+
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 2: SERVER -> CLIENT: 250-mailout4.pub.mailoutpod2-cph3.one.com
+250-PIPELINING
+250-CHUNKING
+250-SIZE 104857600
+250-AUTH LOGIN PLAIN
+250-ENHANCEDSTATUSCODES
+250 8BITMIME
+
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 1: CLIENT -> SERVER: AUTH LOGIN
+
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 2: SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 1: CLIENT -> SERVER: [credentials hidden]
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 2: SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 1: CLIENT -> SERVER: [credentials hidden]
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 2: SERVER -> CLIENT: 235 2.7.0 Ok
+
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 1: CLIENT -> SERVER: MAIL FROM:<learnreflects@learnreflects.com>
+
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 2: SERVER -> CLIENT: 250 2.1.0 Ok
+
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 1: CLIENT -> SERVER: RCPT TO:<didriknathaniel2@outlook.com>
+
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 2: SERVER -> CLIENT: 250 2.1.5 Ok
+
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 1: CLIENT -> SERVER: DATA
+
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 2: SERVER -> CLIENT: 354 End data with <CR><LF>.<CR><LF>
+
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 1: CLIENT -> SERVER: Date: Tue, 26 Nov 2024 12:20:11 +0000
+
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 1: CLIENT -> SERVER: To: Customer <didriknathaniel2@outlook.com>
+
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 1: CLIENT -> SERVER: From: LearnReflects <learnreflects@learnreflects.com>
+
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 1: CLIENT -> SERVER: Subject: Your software download & Activasion key
+
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 1: CLIENT -> SERVER: Message-ID: <W4Q4AfbaF7PhQomnptazTQruoPTzEJbJZgT16RO4sfk@learnreflects.com>
+
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 1: CLIENT -> SERVER: X-Mailer: PHPMailer 6.9.2 (https://github.com/PHPMailer/PHPMailer)
+
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 1: CLIENT -> SERVER: MIME-Version: 1.0
+
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 1: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 1: CLIENT -> SERVER:  boundary="b1=_W4Q4AfbaF7PhQomnptazTQruoPTzEJbJZgT16RO4sfk"
+
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 1: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 1: CLIENT -> SERVER: 
+
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 1: CLIENT -> SERVER: --b1=_W4Q4AfbaF7PhQomnptazTQruoPTzEJbJZgT16RO4sfk
+
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 1: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 1: CLIENT -> SERVER: 
+
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 1: CLIENT -> SERVER: Dear Customer,
+
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 1: CLIENT -> SERVER: 
+
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 1: CLIENT -> SERVER: Your activation key is: D0F4E5E5667C9B1C
+
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 1: CLIENT -> SERVER: 
+
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 1: CLIENT -> SERVER: Thank you for your purchase!
+
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 1: CLIENT -> SERVER: 
+
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 1: CLIENT -> SERVER: --b1=_W4Q4AfbaF7PhQomnptazTQruoPTzEJbJZgT16RO4sfk
+
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 1: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 1: CLIENT -> SERVER: 
+
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 1: CLIENT -> SERVER: Here is the software you requested. You can download it from the attached zip file.<br><br>Dear Customer,<br><br>Your activation key is: <b>D0F4E5E5667C9B1C</b><br><br>Thank you for your purchase!
+
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 1: CLIENT -> SERVER: 
+
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 1: CLIENT -> SERVER: 
+
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 1: CLIENT -> SERVER: --b1=_W4Q4AfbaF7PhQomnptazTQruoPTzEJbJZgT16RO4sfk--
+
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 1: CLIENT -> SERVER: 
+
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 1: CLIENT -> SERVER: .
+
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 2: SERVER -> CLIENT: 250 2.0.0 Ok: queued as c8780108-abf0-11ef-8025-e1a416005e33
+
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 1: CLIENT -> SERVER: QUIT
+
+[26-Nov-2024 12:20:11 UTC] SMTP Debug level 2: SERVER -> CLIENT: 221 2.0.0 Bye
+
+[26-Nov-2024 12:20:11 UTC] Email sent successfully to didriknathaniel2@outlook.com
+[26-Nov-2024 12:20:11 UTC] Hit the finally block in send_email.php
