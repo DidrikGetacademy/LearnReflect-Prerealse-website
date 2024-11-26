@@ -14,6 +14,7 @@ function Checkout() {
     const [isModalOpen,setIsModalOpen] = useState(false);
     const [modalmessage,setmodalMessage] = useState("")
     const [modaldetails,setmodaldetails] = useState("");
+    const [modalmessagedescription,setmodalmessagedescription] = useState("")
     const [isemailvalid, setisEmailValid] = useState(false);
     const subscriptiontypeRef = useRef(subscriptiontype)
 
@@ -31,7 +32,7 @@ function Checkout() {
        return !isemailvalid;  //disable button if email is not valid
     }
 
-    
+
     useEffect(()=>{
         subscriptiontypeRef.current = subscriptiontype;
     },[subscriptiontype]);
@@ -130,8 +131,9 @@ function Checkout() {
                         console.log("Parsed JSON: ", data);
                         if (data.key_code) {
                             console.log("Server keycode: ", name + " " + data.key_code);
-                            setmodalMessage("Thanks for payment!  you will recieve details and download link on your email! ")
-                            setmodaldetails(`Order ID: ${details.id}`)
+                            setmodalMessage("Thanks for payment!")
+                            setmodalmessagedescription(" you will recieve details & download link on your email!")
+                            setmodaldetails(`Order ID: ${details.id} - EmailAdress: ${emailref.current.value}`)
                             setIsModalOpen(true);
                         } else if (data.error) {
                             console.log("Server error: ", data.error);
@@ -181,7 +183,7 @@ function Checkout() {
                     />
                 </div>
             </div>
-            {isModalOpen  && (<Modal details={modaldetails} message={modalmessage} onClose={() => ClosePaymentModal()}/>)}
+            {isModalOpen  && (<Modal details={modaldetails} description={modalmessagedescription} message={modalmessage} onClose={() => ClosePaymentModal()}/>)}
         </div>
     );
 
