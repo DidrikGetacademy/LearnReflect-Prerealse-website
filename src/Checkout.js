@@ -14,9 +14,24 @@ function Checkout() {
     const [isModalOpen,setIsModalOpen] = useState(false);
     const [modalmessage,setmodalMessage] = useState("")
     const [modaldetails,setmodaldetails] = useState("");
+    const [isemailvalid, setisEmailValid] = useState(false);
     const subscriptiontypeRef = useRef(subscriptiontype)
 
+    const handleEmailChange = () => {
+        const emailInput = emailref.current.value; // gets the current value of the email input using the useref, that gets the present value.
+        setisEmailValid(validateEmail(emailInput)) // usestate funtion that sets the value of the isemailvalid after the validation has been approved or denied. 
+    }
 
+    const validateEmail = (email) => {
+        const emailregex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/ //Regex for a valid email.
+        return emailregex.test(email) // returns a boolean value of true or false depending on the test confirmation of the email
+    }
+
+    const CheckPaymentValue = () => {
+       return !isemailvalid;  //disable button if email is not valid
+    }
+
+    
     useEffect(()=>{
         subscriptiontypeRef.current = subscriptiontype;
     },[subscriptiontype]);
@@ -68,7 +83,6 @@ function Checkout() {
 
 
 
-
     const ClosePaymentModal = () => {
         Navigate('/');
     }
@@ -87,7 +101,7 @@ function Checkout() {
             const OrderId = details.id;
             const name = details.payer.name.given_name;
             const email = emailInput || details.payer.email_address;
-            const subscription_type = subscriptiontype
+            const subscription_type = subscriptiontypeRef.current
             if (details.id === '') {
                 console.log('Order_id is empty');
                 alert('Error, Details ID is empty');
@@ -111,7 +125,7 @@ function Checkout() {
                 .then((response) => response.text())
                 .then((text) => {
                     console.log("Raw response text", text);
-                    try {
+                    try { 
                         const data = JSON.parse(text);
                         console.log("Parsed JSON: ", data);
                         if (data.key_code) {
@@ -157,17 +171,17 @@ function Checkout() {
                         </>
                     )}
                     <label>Please write in your email for details:</label>
-                    <input type="email" placeholder="E-Mail" className="EmailInput" ref={emailref} />
+                    <input onChange={handleEmailChange} type="email" placeholder="E-Mail" className="EmailInput" ref={emailref} />
                     <PayPalButtons
                         style={{ layout: "vertical" }}
                         createOrder={(data, actions) => onCreateOrder(data, actions)}
                         onApprove={(data, actions) => onApprove(data, actions)}
                         onError={(err) => console.error("Paypal error: ", err)}
-                        disabled={!emailref.current.value}
+                        disabled={CheckPaymentValue()}
                     />
                 </div>
             </div>
-            {isModalOpen  && (<Modal details={modaldetails} modalmessage={modalmessage} onClose={() => ClosePaymentModal()}/>)}
+            {isModalOpen  && (<Modal details={modaldetails} message={modalmessage} onClose={() => ClosePaymentModal()}/>)}
         </div>
     );
 
