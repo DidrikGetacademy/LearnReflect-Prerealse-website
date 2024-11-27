@@ -11,7 +11,7 @@
 
   if (in_array($origin, $Allowed_origins)) {
     header("Access-Control-Allow-Origin: $origin");
-  }else {
+  }else {   
     header("Access-Control-Allow-Origin: 'none'");
   }
 // Headers for CORS and JSON response

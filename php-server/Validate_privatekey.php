@@ -68,7 +68,7 @@ if ($result->num_rows > 0) {
 
         #Updated the key's status to 'active' and increment the time_used counter
         $subscription_end = ($subscription_type === 'monthly') ? date('Y-m-d H:i:s', strtotime('+1 month')) : null;
-        $update_user_stmt = $conn->prepare("UPDATE user set subscription_type = ?, subscription_end = ? where id = ?");
+        $update_user_stmt = $conn->prepare("UPDATE users set subscription_type = ?, subscription_end = ? where id = ?");
         $update_user_stmt-> bind_param('ssi',$subscription_type,$subscription_end,$user_id);
         $update_user_stmt->execute();
         $update_user_stmt->close();
@@ -78,7 +78,7 @@ if ($result->num_rows > 0) {
         #payload back too python script,
         echo json_encode(
 [
-                "success" => true,
+                "success" => true, 
                 "subscription_type" => $subscription_type,
                 "subscription_end" => $subscription_end
                 ]);
