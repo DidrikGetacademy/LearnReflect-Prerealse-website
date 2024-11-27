@@ -115,20 +115,15 @@ p {
 
 
   .Whitelist-Container{
-    position: relative;
+    position: fixed;
     display: flex;
     background-color: grey;
     width: 250px;
-    height: 100px
+    height: 100px;
+    margin-bottom: 50px;
   }
 
-  .EarlyAccess{
-    position: relative;
-    display: flex;
-    top: 15vh;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: grey;
-  }
+
 
 
 .P-Early{

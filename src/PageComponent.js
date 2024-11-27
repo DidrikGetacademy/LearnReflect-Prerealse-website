@@ -15,7 +15,7 @@ function Page() {
             <h1 class="HomeTopTitle">
               {" "}Empowering Your Self-Development Journey with Cutting-Edge AI
             </h1>
-            <br />
+
             <img className="LR-LOGO" src={LRlogo} alt="LR-Logo"/>
             <div className="Whitelist">
               <Whitelist />

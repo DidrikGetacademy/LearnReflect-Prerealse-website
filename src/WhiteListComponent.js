@@ -95,9 +95,7 @@ function Whitelist() {
             </button>
           </div>
         </div>}
-      <p className="P-EarlyAccess">
 
-      </p>
     </div>
   );
 }
