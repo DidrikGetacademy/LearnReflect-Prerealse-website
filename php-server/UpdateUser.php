@@ -26,12 +26,12 @@ $email = $data['email'];
 
 if(!$Userid || !$email){
     http_response_code(400);
-    error_log("Email and password are required");
+    error_log("Invalid input: UserID or email missing. Data recived: ". json_encode($data));
     echo json_encode(["success" => false,'message' => "UserID and email required"]);
     exit;
 }
 
-$stmt = $conn->prepare("SELECT id, name, email, subscription_type, FROM users WHERE id = ? AND email = ?");
+$stmt = $conn->prepare("SELECT id, name, email, subscription_type FROM users WHERE id = ? AND email = ?");
 if(!$stmt){
     http_response_code(500);
     error_log("Failed to prepare statement: ". $conn->error);
