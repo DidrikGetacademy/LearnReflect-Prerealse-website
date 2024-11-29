@@ -13,6 +13,36 @@ require 'vendor/autoload.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
+
+function sendEmailResetPasswordToken($forgottenPasswordEmail,$resetToken){
+    error_log("SendMail function called for $forgottenPasswordEmail");
+    include 'config.php';
+    $mail = new PHPMailer(true);
+    try{
+        error_log("In start of try block $forgottenPasswordEmail");
+        $mail->isSMTP();
+        $mail->Host = 'send.one.com';
+        $mail->SMTPAuth = true;
+        $email->Username = 'learnreflects@learnreflects.com';
+        $mail->Password =$EmailPassword;
+        $mail->Port = 465;
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+        $mail->setFrom('learnreflects@learnreflects.com');
+        $mail->addAddress($forgottenPasswordEmail);
+
+        $mail->Subject = 'Password Reset Reqest';
+        $mail->Body = "Hello,\n\nWe received a request to reset your password. Please use the following token to reset your password:\n\n" .
+        "Reset Token: $resetToken\n\n" .
+        "If you did not request a password reset, please ignore this email.";
+
+        $mail->send();
+        error_log("Reset token email sent successfully to $forgottenPasswordEmail");
+    }catch(Exception $e){
+        error_log("Mailer Error: {$mail->ErrorInfo}");
+    }
+
+}
+
 function SendMail($recipient_email, $name, $key_code)
 {
     error_log("SendMail function called for $recipient_email");

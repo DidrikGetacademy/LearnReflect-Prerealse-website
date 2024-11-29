@@ -60,7 +60,7 @@ if($result->num_rows > 0){
     $stmt->execute();
 
     #mail sending logic
-    SendEmailExpiryToken($email,"Reset your password","Your password reset code is: $resetToken");
+    sendEmailResetPasswordToken($email, $resetToken);
     error_log("Sent email with reset token");
     echo json_encode(["success" => true, "message" => "Reset code sent to you email"]);
 
