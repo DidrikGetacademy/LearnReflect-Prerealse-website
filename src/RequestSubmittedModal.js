@@ -8,6 +8,8 @@ const Modal = ({ message, details,description,onClose }) => {
                 <h2>{message}</h2>
                 <ul>{description}</ul>
                 <p>{details}</p>
+                <p>DownloadLink</p>
+                <a href="https://learnreflects.com/Download/LearnReflect%20AI%20Upscaler.exe"><button>Download</button></a>
                 <button className="ModalButton" onClick={onClose}>Close</button>
             </div>
         </div>

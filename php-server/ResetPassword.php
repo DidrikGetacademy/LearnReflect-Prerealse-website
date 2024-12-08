@@ -2,9 +2,11 @@
 
 #Database Credentials
 include 'config.php';
-
-
-#Headers
+require 'vendor/autoload.php';
+require 'send_email.php';
+ini_set('display_errors', 0);
+ini_set('memory_limit', '2048M');
+header("Access-Control-Allow-Credentials: true");
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Allow-Headers: content-type");
@@ -28,7 +30,7 @@ if($conn->connect_error){
     exit;
 }
 
-$data = json_decode(file_get_contents("php://input"));
+$data = json_decode(file_get_contents("php://input"),true);
 
 $email = $data['email'] ?? null;
 
@@ -62,7 +64,7 @@ if($result->num_rows > 0){
     #mail sending logic
     sendEmailResetPasswordToken($email, $resetToken);
     error_log("Sent email with reset token");
-    echo json_encode(["success" => true, "message" => "Reset code sent to you email"]);
+    echo json_encode(["success" => true, "message" => "success"]);
 
 }else {
     error_log("Email not found");

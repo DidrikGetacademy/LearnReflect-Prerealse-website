@@ -3,7 +3,7 @@ import Checkout from './Checkout'
 import { PayPalScriptProvider, } from "@paypal/react-paypal-js";
 function Payment() {
     const initialoptions = {
-        "client-id": "AcnQT0n7Xq_qaWASBn0R25WCqE-zqOtpXdZwah04i4WYY5dcuz8hf3gDZTJ7lK7wLew-13VZ4DBoY18n", 
+        "client-id": "ASr5PGwN3Ep9FYzVsoRz9WLMDYOX3l1b0z5KvWtxT_Bb75LSyw7MGXS4qvG9D6PfHVGAOd38yNj_j6dC", 
         currency: "USD", 
         intent: "capture", 
       }

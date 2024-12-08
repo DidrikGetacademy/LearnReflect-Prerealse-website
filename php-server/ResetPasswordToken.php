@@ -44,7 +44,7 @@ $result = $stmt->get_result();
 if($result->num_rows > 0){
     $reset = $result->fetch_assoc();
 
-    if (strtotime($reset['exipry']) < time()){
+    if (strtotime($reset['expiry']) < time()){
         echo json_encode(["message" => "Reset token expired"]);
         error_log("Reset token expired");
         exit;

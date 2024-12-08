@@ -23,7 +23,7 @@ function sendEmailResetPasswordToken($forgottenPasswordEmail,$resetToken){
         $mail->isSMTP();
         $mail->Host = 'send.one.com';
         $mail->SMTPAuth = true;
-        $email->Username = 'learnreflects@learnreflects.com';
+        $mail->Username = 'learnreflects@learnreflects.com';
         $mail->Password =$EmailPassword;
         $mail->Port = 465;
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
@@ -52,26 +52,27 @@ function SendMail($recipient_email, $name, $key_code)
     try {
         error_log("In start of try block $recipient_email");
         $mail->isSMTP();
-        $mail->Host = 'send.one.com';              
-        $mail->SMTPAuth = true;                  
-        $mail->Username = 'learnreflects@learnreflects.com';  
-        $mail->Password = $EmailPassword;  
-        $mail->Port = 465;                         
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;    
+        $mail->Host = 'send.one.com';                // One.com's SMTP server
+        $mail->SMTPAuth = true;                       // Enable SMTP authentication
+        $mail->Username = 'learnreflects@learnreflects.com';  // Your full One.com email address
+        $mail->Password = $EmailPassword;      // The password for this email account
+        $mail->Port = 465;                            // SMTP port for SSL
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // Use SSL encryption        
 
         $mail->setFrom('learnreflects@learnreflects.com', 'LearnReflects');
         $mail->addAddress($recipient_email, $name);
-        $zipFilePath = 'Software/LearnReflectEnchancer.zip'; 
+       #$zipFilePath = 'Software/LearnReflectEnchancer.zip'; 
 
 
-        $mail->addAttachment($zipFilePath, 'LearnReflectEnchancer.zip'); 
-       if (file_exists($zipFilePath)) {
-          $mail->addAttachment($zipFilePath, 'LearnReflectEnchancer.zip'); 
-         error_log("Attachment added successfully.");
-       } else {
-           error_log("Error: The file $zipFilePath does not exist.");
-           $mail->Body .= "<br><br><b>Error:</b> The requested software file is unavailable.";
-       }
+       ## $mail->addAttachment($zipFilePath, 'LearnReflectEnchancer.zip'); 
+       ## if (file_exists($zipFilePath)) {
+         ##   $mail->addAttachment($zipFilePath, 'LearnReflectEnchancer.zip'); 
+          ##  error_log("Attachment added successfully.");
+      ##  } else {
+         ##   error_log("Error: The file $zipFilePath does not exist.");
+            // Optionally, send an email without the attachment or add a fallback error message
+        ##    $mail->Body .= "<br><br><b>Error:</b> The requested software file is unavailable.";
+     ##   }
 
         $mail->isHTML(true);
         $mail->Subject = 'Your software download & Activasion key';
@@ -91,6 +92,6 @@ function SendMail($recipient_email, $name, $key_code)
         error_log('Mailer Exception ' . $e->getMessage());
     } finally {
         error_log("Hit the finally block in send_email.php");
-        ob_end_flush();
+        #ob_end_flush();
     }
 }

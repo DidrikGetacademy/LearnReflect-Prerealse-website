@@ -132,7 +132,7 @@ function Checkout() {
                         if (data.key_code) {
                             console.log("Server keycode: ", name + " " + data.key_code);
                             setmodalMessage("Thanks for payment!")
-                            setmodalmessagedescription(" you will recieve details & download link on your email!")
+                            setmodalmessagedescription(" you will recieve Key-Code in your email")
                             setmodaldetails(`Order ID: ${details.id} - EmailAdress: ${emailref.current.value}`)
                             setIsModalOpen(true);
                         } else if (data.error) {
