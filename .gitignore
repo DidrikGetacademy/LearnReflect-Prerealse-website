@@ -23,3 +23,5 @@ build/static/media/*.jpg
 # Ignore all build files but include the main index.html if needed
 build/*
 !build/index.html
+
+src/Images/*.webp
