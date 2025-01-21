@@ -14,7 +14,7 @@ header("Access-Control-Allow-Headers: content-type");
 
 #ERROR logging
 error_reporting(E_ALL);
-ini_set('display_errors', 0);
+ini_set(option: 'display_errors', 0);
 ini_set('log_errors', 1); // Enable error logging
 ini_set('error_log', 'error_log.txt'); // Point to the correct log file
 

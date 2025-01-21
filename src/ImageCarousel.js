@@ -11,8 +11,6 @@ import SoftwareIMG7 from './Images/app7.png'
 import SoftwareIMG8 from './Images/app8.png'
 import SoftwareIMG9 from './Images/app9.png'
 import SoftwareIMG10 from './Images/app10.png'
-import right from './Images/right.jpg';
-import left from './Images/left.jpg';
 import './Css/imageCarousal.css';
 const images = [SoftwareIMG1, Upscaled1, Upscaled2,SoftwareIMG2,SoftwareIMG3,SoftwareIMG4,SoftwareIMG5,SoftwareIMG6,SoftwareIMG7,SoftwareIMG8,SoftwareIMG9,SoftwareIMG10];
 
@@ -43,8 +41,8 @@ function ImageCarousel() {
                     <img className="SoftWareImg" src={images[currentindex]} alt="SoftwareIMG" />
                 </div>
                 <div className="navigation-buttons">
-                    <button className="nav-button" src={left} onClick={prevImage}>←</button> 
-                    <button className="nav-button" src={right}  onClick={nextImage}>→</button> 
+                    <button className="nav-button"  onClick={prevImage}>←</button> 
+                    <button className="nav-button"   onClick={nextImage}>→</button> 
                 </div>
             </div>
         </div>

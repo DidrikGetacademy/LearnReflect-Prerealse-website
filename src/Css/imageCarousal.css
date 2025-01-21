@@ -16,40 +16,39 @@
 
 .nav-button {
     width: 70px; 
+    height: 40px;
     cursor: pointer;
 }
 .image-container {
-    height: 600px; 
+    height: 550px; 
     display: flex;
-    overflow: hidden; 
     justify-content: center; 
     align-items: center
 }
 
 .SoftWareImg {
-    height: 100%;
-    width: auto; 
-    object-fit: cover; 
+    height: 90%;
+    width: 100%; 
     margin-top: 60px;
 }
 
 
 @media (max-width: 768px) {
     .image-container {
-        height: 300px; /* Adjusted height for smaller screens */
+        height: 300px; 
     }
 
     .SoftWareImg {
-        height: auto; /* Allow the height to adjust automatically */
-        width: 100%; /* Image spans the full width */
-        margin-top: 30px; /* Reduced margin for smaller screens */
+        height: auto; 
+        width: 100%;
+        margin-top: 30px; 
     }
 
     .nav-button {
-        width: 50px; /* Smaller buttons for smaller screens */
+        width: 50px;
     }
 
     .navigation-buttons {
-        gap: 10px; /* Reduce spacing between buttons */
+        gap: 10px;
     }
 }

@@ -5,9 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import { Modal, Button } from 'react-bootstrap';
 export default function MenuBar() {
     const navigate = useNavigate();
-    // State for modal
     const [show, setShow] = useState(false);
-    const [modalContent, setModalContent] = useState({ title: '', action: '',Requirements: '',Features: '' });
+    const [modalContent, setModalContent] = useState({ title: '', action: '', Requirements: [], Features:[] });
     const [IsInStock, Setisinstock] = useState(true);
     const handleClose = () => {
         setShow(false);
@@ -23,7 +22,25 @@ export default function MenuBar() {
         navigate('./Payment')
     }
 
+const requirements = [
+     "Windows 11 / windows 10 (SOON => mac,linux compatible)",
+     "RAM  8GB or Higher",
+     "ANY DirectX12 compatiable GPU with 4GB or bigger VRAM"
+];
 
+const features = [
+    "Elegant and easy to use GUI",
+    "Image and Video upscale",
+    "Multiple GPUs support",
+    "Compatible images - jpg, png, tif, bmp, webp, heic",
+    "Compatible video - mp4, webm, mkv, flv, gif, avi, mov, mpg, qt, 3gp",
+    "Automatic image tiling to avoid GPU VRAM limitation",
+    "Resize image/video before upscaling",
+    "Interpolation between original file and upscaled file",
+    "Video upscaling STOP & RESUME",
+    "PRIVACY FOCUSED - no internet connection required / everything is on your PC",
+    "COMING SOON: AUDIO ISOLATION & AUDIO ENHANCEMENT"
+]
 
     return (
         <div className='MenuBar-Container'>
@@ -31,10 +48,10 @@ export default function MenuBar() {
                 <div className="container">
                     <div className="row">
                         {[
-                            { title: 'Buy VideoUpscaler AI', action: '',Features: '',Requirements: '' },
+                            { title: 'Buy VideoUpscaler AI', action: 'The ultimate solution',Features: features, Requirements: requirements },
                             { title: 'Whitelist' },
                             { title: 'LearnReflect AI - GPT Assistant', action: 'LR-Chatbot: Your Personalized Self-Improvement Assistant. Introducing the LR-Chatbot, an integral component of the LearnReflect self-improvement platform, designed to empower your personal growth journey. This AI-driven chatbot leverages advanced machine learning techniques to provide tailored guidance and support as you work towards achieving your goals. Pre-trained specifically for self-improvement, the LR-Chatbot engages in meaningful conversations, continuously learning from your interactions to adapt to your unique aspirations. Whether you’re striving to build discipline, enhance motivation, or develop effective daily routines, this chatbot becomes a personal companion dedicated to your success. The LR-Chatbot offers personalized discipline-building strategies and motivation techniques, ensuring that you remain focused and accountable on your journey. With its ability to understand your evolving needs, the chatbot provides insights and encouragement that resonate with you, making self-improvement an achievable goal. In conjunction with our advanced AI models for enhancing video and audio quality, LearnReflect serves as an all-in-one solution for anyone committed to self-improvement and productivity.' },
-                            { title: 'Contact', },
+                            { title: 'Contact'},
                       
                         ].map((item, index) => (
                             <div className="col-12 mb-3" key={index}>
@@ -45,10 +62,15 @@ export default function MenuBar() {
                                         } else if (item.title === 'Contact') {
                                             navigate('./Contact');
                                         } else {
-                                            handleShow(item.title, item.action);
+                                            handleShow(
+                                                item.title,
+                                                item.action,
+                                                item.Requirements,
+                                                item.Features
+                                            );
                                         }
-                                        if (item.title === 'AI Video Enhancer') {
-                                            Setisinstock(true);
+                                        if (item.title === "AI Video Enchancer") {
+                                            Setisinstock(true)
                                         }
                                     }}
                                     className="title-span">
@@ -61,12 +83,34 @@ export default function MenuBar() {
             </nav>
 
 
-            <Modal show={show} className='Modal fade' size="m" onHide={handleClose}>
+            <Modal show={show} className='Modal fade' size="lg" onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>{modalContent.title}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    {modalContent.action}
+                    {modalContent.action && <p>{modalContent.action}</p>}
+
+                    {modalContent.Features && (
+                        <div>
+                            <h5>Features:</h5>
+                            <ul>
+                                {modalContent.Features.map((features,index) => (
+                                    <li key={index}>{features}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
+                    {modalContent.Requirements && (
+                        <div>
+                            <h5>Reqirements: </h5>
+                            <ul>
+                                {modalContent.Requirements.map((requirements,index) => (
+                                    <li key={index}>{requirements}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
+
                 </Modal.Body>
                 <Modal.Footer>
                     {IsInStock ?
