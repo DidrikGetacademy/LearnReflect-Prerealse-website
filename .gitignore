@@ -25,3 +25,60 @@ build/*
 !build/index.html
 
 src/Images/*.webp
+
+
+# Ignore the virtual environment directory
+LearnReflect-System/Python-Backend-Flask/myenv
+Python-Backend-Flask/ChatbotAI/Model
+Python-Backend-Flask/AI-Video-Enchancer/myenv
+Python-Backend-Flask/AI-Video-Enchancer/AI-onnx
+Python-Backend-Flask/AI-Video-Enchancer/Assets
+Backend-Express/node_modules
+LearnReflect-React-Frontend/node_modules
+
+# Byte-compiled / optimized / compiled Python files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Logs and database files
+*.log
+*.sqlite3
+
+# Unit test / coverage reports
+htmlcov/
+.coverage
+.tox/
+.nox/
+*.cover
+*.py,cover
+.hypothesis/
+
+# pyenv
+.python-version
+
+# Distribution / packaging
+*.egg
+*.egg-info/
+dist/
+build/
+*.whl
+
+# C extensions
+*.so
+
+# Other backups or system files
+*.bak
+*.swp
+.DS_Store
+Thumbs.db

@@ -1,0 +1,1925 @@
+.PageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.userinputcontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Align items at the bottom */
+    align-items: stretch; /* Align children to take full width */
+    height: 600px; /* Height of the container */
+    width: 500px;
+    background-color: grey;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Prevent scrolling */
+}
+
+.GPTBackground {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.ChatBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    margin: 0; /* Set margin to 0 for ChatBox */
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.User-P, .Chatbot-P {
+    margin: 5px 0;
+    text-align: left;
+    font-size: 14px; /* Set font size to a smaller value */
+    word-wrap: break-word; /* Ensure long words wrap */
+    overflow-wrap: break-word; /* Ensure long words wrap */
+}
+
+.Feedback-Container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+
+
+
+
+
+
+.App {
+    text-align: center;
+  
+  }
+  
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+
+
+
+  .AIupscale-Container{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+
+ 
+}
+
+
+.p{
+    justify-content: center;
+    display: flex;
+    
+}
+
+
+
+
+
+
+.contact-panel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.Form-Container{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 50vh;
+}
+
+
+.LR-Logo{
+    height: 75px;
+    width:75px;
+    border-radius: 60vh;
+}
+
+
+.RequestMessage{
+    width: 250px;
+    height: 250px;
+    background-color: black;
+}
+
+.dropdownContact{
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-Contact {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  width: 50vh; /* Set width to 40% */
+  height: 40vh; /* Set height to 15% */
+  top: calc(100% + 18px); /* Place the dropdown below the container with some spacing */
+  left: 0; /* Align with the left side of the container */
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  z-index: 1;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: start;
+  overflow: hidden;
+  border: 1.4px solid whitesmoke;
+}
+
+
+
+
+h1 {
+    text-shadow: 2px 2px 4px rgb(13, 216, 189); /* Adjust the shadow effect */
+    color: white;
+    text-align: center;
+    font-size: xx-large;
+  }
+  h2 {
+    text-shadow: 2px 2px 4px rgb(13, 216, 189); /* Adjust the shadow effect */
+    color: white;
+    text-align: center;
+    font-size: xx-large;
+  }
+  h3 {
+    text-shadow: 2px 2px 4px rgb(13, 216, 189); /* Adjust the shadow effect */
+    color: white;
+    text-align: center;
+    font-size: xx-large;
+  }
+  h4 {
+    text-shadow: 2px 2px 4px rgb(13, 216, 189); /* Adjust the shadow effect */
+    color: rgb(22, 189, 77);
+    text-align: center;
+    font-size: large;
+  }
+  h5 {
+    height: 150px;
+    width: 150px;
+    display: flex;
+    text-align: center;
+    position: relative;
+    left: 9vh;
+  }
+  
+  .selectsize {
+    bottom: -25px;
+    left: 50px;
+    position: relative;
+    padding: 5px 10px; /* Adjust padding as needed */
+    background-image: linear-gradient(180deg, #6e1717, #0c09df);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Add transition for smooth hover effect */
+  }
+  
+  .selectsize:hover {
+    background-color: #0056b3; /* Example hover background color */
+  }
+  
+  .about-text {
+    font-size: medium;
+    line-height: 1.5;
+    margin-top: 48%;
+    color: white;
+    padding-bottom: 1%;
+    border-radius: .25rem;
+    padding: 10px;
+  }
+  .ErrorLabel {
+    color: white;
+    font-size: 1em;
+    font-style: initial;
+  }
+  .QuoteText {
+    font-size: x-small;
+    font-style: italic;
+    text-align: justify;
+  
+    padding: 10px;
+    margin: 4px;
+    border-radius: 10px;
+    box-shadow: 7px 7px 10px rgba(13, 216, 189, .5); /* Add a shadow to the card */
+  }
+  p {
+    font-size: large;
+    font-style: italic;
+    text-align: center;
+    line-height: 3; /* Adjust this value to increase or decrease the space between lines */
+    bottom: 5vh;
+    position: relative;
+    text-shadow: 0 0 6px #06af22, 0 0 5px #0059ff, 0 0 4px #0447c5; /* Adjust the color and size of the glow */
+    animation: glowing 2s infinite; /* Adjust animation duration as needed */
+  }
+  p > :not(:last-child) {
+    margin-bottom: 3em; /* Adjust this value to increase or decrease the space between lines */
+  }
+  
+  .menu-icon:hover {
+    transform: scale(1.1); /* Scale up the icon on hover */
+  }
+  
+  img {
+    width: 100%;
+    max-width: 150px; /* Limit max size for images */
+    height: auto;
+    margin: 10px;
+  }
+  
+  
+  .img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .social-icon {
+    margin: 10px;
+    width: 50px;
+    height: auto;
+  }
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    h1, h2, h3 {
+      font-size: 1.5rem;
+    }
+  
+    .social-icon {
+      width: 40px;
+    }
+  
+    .scroll-container {
+      width: 90%;
+      max-width: 300px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    h1, h2, h3 {
+      font-size: 1.2rem;
+    }
+  
+    .social-icon {
+      width: 30px;
+    }
+  
+    .scroll-container {
+      width: 95%;
+      max-width: 280px;
+    }
+  }
+  
+  h1, h2, h3, h4, h5 {
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgb(13, 216, 189);
+    margin: 10px auto;
+  }
+  
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  :root {
+    --hue: 190deg;
+    --sat: 50%;
+    --blur: 0px;
+  }
+  
+  #app div {
+    --hue2: calc(var(--hue) + 60deg);
+    --sat2: calc(var(--sat) + 10%);
+    --clr: hsl(var(--hue) var(--sat) 90%);
+    --clr2: hsl(var(--hue2) var(--sat2) 85%);
+    --text: hsla(var(--hue), 70%, 10%, 0.9);
+    --gradoffset: 0vw; /* Adjusted for smaller screens */
+    --gradgap: 0vw; /* Adjusted for smaller screens */
+  }
+  
+  #app .custom {
+    --hue: 30deg;
+    --sat: 50%;
+    --hue2: 5deg;
+    --sat2: 80%;
+  }
+  .button-container {
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    top: 6vh;
+  }
+  
+  button {
+    color: var(--text);
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    background-color: var(--clr);
+    background-image: linear-gradient(180deg, #6e1717, #0c09df);
+    color: white;
+    background-repeat: no-repeat;
+    background-position: center var(--gradoffset);
+    background-size: 100% 200%;
+    border-radius: 2em;
+    border: none;
+    box-shadow: 0 -0.5em 0.5em transparent, 0 0.5em 0.5em transparent,
+      0 0.25em 0.3em -0.2em hsla(var(--hue), var(--sat), 50%, 0.46),
+      0 0.25em 0.75em hsla(var(--hue), calc(var(--sat) - 10%), 40%, 0.3);
+    position: relative;
+    transition: all 0.5s ease;
+    outline: none;
+    &::before,
+    &::after {
+      content: "";
+      inset: 0;
+      position: absolute;
+      border-radius: 5em;
+    }
+  
+    &:hover {
+      transform: scale(0.95);
+    }
+  
+    &:active {
+      transform: scale(0.9);
+    }
+  }*/
+  a {
+    display: inline-block;
+    width: 50px;
+    text-decoration: none;
+  }
+  
+  @keyframes fadeInUp {
+    10% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(15);
+    }
+  }
+  
+  ul {
+    justify-content: center;
+    position: relative;
+    height: 25px;
+  }
+  
+  .dropdown {
+    position: absolute;
+    top: 30vh;
+    right: 0px;
+    display: inline-block;
+    z-index: 1000;
+  }
+  
+  .dropdown-content {
+    position: absolute;
+    top: calc(100%); /* Position the dropdown below the icon */
+    right: 0; /* Align the dropdown to the right */
+    background-color: #111213;
+    width: auto; /* Let the width adjust to content */
+    max-width: 200px; /* Set a maximum width for the dropdown */
+    box-shadow: 0 7px 13px 0 #1bd4bb;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-end; /* Align items to the right */
+    animation: slideRight 0.5s forwards; /* Use slideRight animation */
+  }
+  .size {
+    padding: 9px;
+    border: 1px solid light;
+    font-size: 0.7em;
+    text-align: center;
+    &:hover {
+      background: white;
+      color: white;
+      transition: all .4s ease-in-out;
+    }
+  }
+  
+  .dropdown-content a {
+    color: white;
+    padding: 5px 16px;
+    position: relative;
+    text-decoration: none;
+    display: flex;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .menu-icon {
+    width: 35px;
+    margin-left: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Add transition for smooth animation */
+  }
+  
+  @keyframes slideRight {
+    0% {
+      right: -200px; /* Start off-screen to the right */
+    }
+    100% {
+      right: 0; /* End position */
+    }
+  }
+  
+  .dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    position: relative;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .show {
+    display: block;
+  }
+  
+  a {
+    color: white;
+  }
+  .logincontainer {
+    position: relative;
+    display: flex;
+    padding: 5px 10px; /* Adjust padding as needed */
+    background-image: linear-gradient(180deg, #6e1717, #0c09df);
+    top: 18vh;
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto; /* Center horizontally */
+    border-radius: 15%;
+    width: 250px;
+    height: 350px;
+  }
+  
+  .loginform {
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto; /* Center horizontally */
+  }
+  
+  .loginform input,
+  .loginform button {
+    margin-bottom: 20px; /* Adjust as needed */
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    background-color: rgb(0, 0, 0);
+    color: white;
+  }
+  
+  .LoginButton {
+    width: 100px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 0.95em;
+  }
+  
+  input {
+    text-align: center;
+    font-style: italic;
+    border-radius: 20px;
+  }
+  
+  .AddToCart:hover {
+    background-color: #0056b3; /* Example hover background color */
+  }
+  
+  .bio-heading {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .LiFuture {
+    color: hsl(226, 91%, 33%);
+    text-shadow: 2px 2px 4px rgb(18, 9, 141);
+    line-height: 1.6;
+    font-style: italic;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .bio-text {
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #0ba3a3; /* Changed text color */
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .bio-link {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .bio-link:hover {
+    text-decoration: underline;
+  }
+  
+  .scroll-container {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    width: 90%;
+    max-width: 350px;
+    height: 60vh;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    top: 16.8vh;
+    position: relative;
+    z-index: 3;
+  }
+  
+  .scroll-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 95%;
+    font-size: 1em;
+    color: white;
+    z-index: 3;
+    opacity: 0;
+    animation: fadeInUp 2s ease forwards;
+    position: relative;
+  }
+  
+  .scroll-page .selectsize {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .scroll-controls {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+  }
+  
+  .scroll-controls button {
+    margin: 0 0px; /* Adjust the margin value to decrease or increase spacing */
+    width: 110px;
+  }
+  
+  .button-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 20px;
+  }
+  
+  
+  @media (max-width: 2402px) {
+  h1 {
+    text-shadow: 2px 2px 4px rgb(13, 216, 189); /* Adjust the shadow effect */
+    color: white;
+    text-align: center;
+    font-size: xx-large;
+  }
+  h2 {
+    text-shadow: 2px 2px 4px rgb(13, 216, 189); /* Adjust the shadow effect */
+    color: white;
+    text-align: center;
+    font-size: xx-large;
+  }
+  h3 {
+    text-shadow: 2px 2px 4px rgb(13, 216, 189); /* Adjust the shadow effect */
+    color: white;
+    text-align: center;
+    font-size: xx-large;
+  }
+  h4 {
+    text-shadow: 2px 2px 4px rgb(13, 216, 189); /* Adjust the shadow effect */
+    color: rgb(22, 189, 77);
+    text-align: center;
+    font-size: large;
+  }
+  h5 {
+    height: 150px;
+    width: 150px;
+    display: flex;
+    text-align: center;
+    position: relative;
+    left: 9vh;
+  }
+  
+  .selectsize {
+    bottom: -25px;
+    left: 50px;
+    position: relative;
+    padding: 5px 10px; /* Adjust padding as needed */
+    background-image: linear-gradient(180deg, #6e1717, #0c09df);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Add transition for smooth hover effect */
+  }
+  
+  .selectsize:hover {
+    background-color: #0056b3; /* Example hover background color */
+  }
+  
+  .about-text {
+    font-size: medium;
+    line-height: 1.5;
+    margin-top: 48%;
+    color: white;
+    padding-bottom: 1%;
+    border-radius: .25rem;
+    padding: 10px;
+  }
+  .ErrorLabel {
+    color: white;
+    font-size: 1em;
+    font-style: initial;
+  }
+  .QuoteText {
+    font-size: x-small;
+    font-style: italic;
+    text-align: justify;
+  
+    padding: 10px;
+    margin: 4px;
+    border-radius: 10px;
+    box-shadow: 7px 7px 10px rgba(13, 216, 189, .5); /* Add a shadow to the card */
+  }
+  p {
+    font-size: large;
+    font-style: italic;
+    text-align: center;
+    line-height: 3; /* Adjust this value to increase or decrease the space between lines */
+    bottom: 5vh;
+    position: relative;
+    text-shadow: 0 0 6px #06af22, 0 0 5px #0059ff, 0 0 4px #0447c5; /* Adjust the color and size of the glow */
+    animation: glowing 2s infinite; /* Adjust animation duration as needed */
+  }
+  p > :not(:last-child) {
+    margin-bottom: 3em; /* Adjust this value to increase or decrease the space between lines */
+  }
+  
+  .menu-icon:hover {
+    transform: scale(1.1); /* Scale up the icon on hover */
+  }
+  
+  img {
+    width: 100%;
+    max-width: 150px; /* Limit max size for images */
+    height: auto;
+    margin: 10px;
+  }
+  
+  
+  .img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .social-icon {
+    margin: 10px;
+    width: 50px;
+    height: auto;
+  }
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    h1, h2, h3 {
+      font-size: 1.5rem;
+    }
+  
+    .social-icon {
+      width: 40px;
+    }
+  
+    .scroll-container {
+      width: 90%;
+      max-width: 300px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    h1, h2, h3 {
+      font-size: 1.2rem;
+    }
+  
+    .social-icon {
+      width: 30px;
+    }
+  
+    .scroll-container {
+      width: 95%;
+      max-width: 280px;
+    }
+  }
+  
+  h1, h2, h3, h4, h5 {
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgb(13, 216, 189);
+    margin: 10px auto;
+  }
+  
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  :root {
+    --hue: 190deg;
+    --sat: 50%;
+    --blur: 0px;
+  }
+  
+  #app div {
+    --hue2: calc(var(--hue) + 60deg);
+    --sat2: calc(var(--sat) + 10%);
+    --clr: hsl(var(--hue) var(--sat) 90%);
+    --clr2: hsl(var(--hue2) var(--sat2) 85%);
+    --text: hsla(var(--hue), 70%, 10%, 0.9);
+    --gradoffset: 0vw; /* Adjusted for smaller screens */
+    --gradgap: 0vw; /* Adjusted for smaller screens */
+  }
+  
+  #app .custom {
+    --hue: 30deg;
+    --sat: 50%;
+    --hue2: 5deg;
+    --sat2: 80%;
+  }
+  .button-container {
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    top: 6vh;
+  }
+  
+  button {
+    color: var(--text);
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    background-color: var(--clr);
+    background-image: linear-gradient(180deg, #6e1717, #0c09df);
+    color: white;
+    background-repeat: no-repeat;
+    background-position: center var(--gradoffset);
+    background-size: 100% 200%;
+    border-radius: 2em;
+    border: none;
+    box-shadow: 0 -0.5em 0.5em transparent, 0 0.5em 0.5em transparent,
+      0 0.25em 0.3em -0.2em hsla(var(--hue), var(--sat), 50%, 0.46),
+      0 0.25em 0.75em hsla(var(--hue), calc(var(--sat) - 10%), 40%, 0.3);
+    position: relative;
+    transition: all 0.5s ease;
+    outline: none;
+    &::before,
+    &::after {
+      content: "";
+      inset: 0;
+      position: absolute;
+      border-radius: 5em;
+    }
+  
+    &:hover {
+      transform: scale(0.95);
+    }
+  
+    &:active {
+      transform: scale(0.9);
+    }
+  }*/
+  a {
+    display: inline-block;
+    width: 50px;
+    text-decoration: none;
+  }
+  
+  @keyframes fadeInUp {
+    10% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(15);
+    }
+  }
+  
+  ul {
+    justify-content: center;
+    position: relative;
+    height: 25px;
+  }
+  
+  .dropdown {
+    position: absolute;
+    top: 30vh;
+    right: 0px;
+    display: inline-block;
+    z-index: 1000;
+  }
+  
+  .dropdown-content {
+    position: absolute;
+    top: calc(100%); /* Position the dropdown below the icon */
+    right: 0; /* Align the dropdown to the right */
+    background-color: #111213;
+    width: auto; /* Let the width adjust to content */
+    max-width: 200px; /* Set a maximum width for the dropdown */
+    box-shadow: 0 7px 13px 0 #1bd4bb;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-end; /* Align items to the right */
+    animation: slideRight 0.5s forwards; /* Use slideRight animation */
+  }
+  .size {
+    padding: 9px;
+    border: 1px solid light;
+    font-size: 0.7em;
+    text-align: center;
+    &:hover {
+      background: white;
+      color: white;
+      transition: all .4s ease-in-out;
+    }
+  }
+  
+  .dropdown-content a {
+    color: white;
+    padding: 5px 16px;
+    position: relative;
+    text-decoration: none;
+    display: flex;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .menu-icon {
+    width: 35px;
+    margin-left: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Add transition for smooth animation */
+  }
+  
+  @keyframes slideRight {
+    0% {
+      right: -200px; /* Start off-screen to the right */
+    }
+    100% {
+      right: 0; /* End position */
+    }
+  }
+  
+  .dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    position: relative;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .show {
+    display: block;
+  }
+  
+  a {
+    color: white;
+  }
+  .logincontainer {
+    position: relative;
+    display: flex;
+    padding: 5px 10px; /* Adjust padding as needed */
+    background-image: linear-gradient(180deg, #6e1717, #0c09df);
+    top: 18vh;
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto; /* Center horizontally */
+    border-radius: 15%;
+    width: 250px;
+    height: 350px;
+  }
+  
+  .loginform {
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto; /* Center horizontally */
+  }
+  
+  .loginform input,
+  .loginform button {
+    margin-bottom: 20px; /* Adjust as needed */
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    background-color: rgb(0, 0, 0);
+    color: white;
+  }
+  
+  .LoginButton {
+    width: 100px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 0.95em;
+  }
+  
+  input {
+    text-align: center;
+    font-style: italic;
+    border-radius: 20px;
+  }
+  
+  .AddToCart:hover {
+    background-color: #0056b3; /* Example hover background color */
+  }
+  
+  .bio-heading {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .LiFuture {
+    color: hsl(226, 91%, 33%);
+    text-shadow: 2px 2px 4px rgb(18, 9, 141);
+    line-height: 1.6;
+    font-style: italic;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .bio-text {
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #0ba3a3; /* Changed text color */
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .bio-link {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .bio-link:hover {
+    text-decoration: underline;
+  }
+  
+  .scroll-container {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    max-width: 350px;
+    height: 60vh;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    top: 16.8vh;
+    position: relative;
+    z-index: 3;
+  }
+  
+  .scroll-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 95%;
+    font-size: 1em;
+    color: white;
+    z-index: 3;
+    opacity: 0;
+    animation: fadeInUp 2s ease forwards;
+    position: relative;
+  }
+  
+  .scroll-page .selectsize {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .scroll-controls {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+  }
+  
+  .scroll-controls button {
+    margin: 0 0px; /* Adjust the margin value to decrease or increase spacing */
+    width: 110px;
+  }
+  
+  .button-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 20px;
+  }
+  
+  }
+  .Homepage {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    height: 100vh; /* Full viewport height */
+    width: 100%; /* Full viewport width */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden; /* Prevent any unwanted scroll */
+    background-color: black; /* Keep your existing background */
+  }
+  
+
+
+
+
+  .ProductImg {
+    z-index: 2;
+    width: 220px;
+    height: 300px;
+    align-items: center;
+    z-index: 3;
+    text-align: center;
+  }
+  .LabelContainer{
+  z-index: 3;
+  display: flex;
+  width: 100%;
+  height: 60px;
+  background-color: lightgrey;
+  font-size: large;
+  font-style: italic;
+  position: fixed;
+  text-align: center;
+  align-items: center;
+  justify-content: space-evenly;
+  }
+  label{
+  cursor: pointer;
+  }
+  .womenImg{
+  position: absolute;
+  z-index: 2;
+  height: 60%;
+  width: 50%;;
+  left: 0;
+  }
+  .menImg{
+  position: absolute;
+  right: 0;
+  z-index: 2;
+  height: 60%;
+  width: 50%;;
+  }
+  
+  .product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 3;
+  }
+  
+  .product p {
+  top: 7.5px;
+  align-items: center;
+  text-align: center;
+  z-index: 3;
+  
+  }
+  
+  .product button {
+  bottom: 25px;
+  width: 100%;
+  bottom: 0;
+  z-index: 3;
+  }
+  
+  .product{
+    border: 2px solid lightgrey;
+    width: 260px;
+    height:400px;
+    position: relative;
+    top:50vh;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 2;
+    margin: 100px;
+    }
+  
+    .product-page {
+      display: flex;
+      flex-wrap: wrap; /* New: Allow items to wrap to the next line */
+      align-items: center;
+      text-align: center;
+      padding: 15px;
+      z-index: 1;
+      justify-content: flex-start;
+    }
+    
+  
+  @keyframes openWallsTop {
+    0% {
+      height: 50%;
+      background-color: black;
+    }
+    100% {
+      height: 50vh; 
+      background-color: white; 
+    }
+  }
+  
+  @keyframes openWallsBottom {
+    0% {
+      height: 50%;
+      background-color: black; 
+    }
+    100% {
+      height: 50vh; 
+      background-color: white; 
+    }
+  }
+  
+  .shop-page.animate .wall-top {
+  
+    animation: openWallsBottom 2s ease-out forwards; /* Apply animation */
+  }
+  
+  .shop-page.animate .wall-bottom {
+    animation: openWallsTop 2s ease-out forwards; /* Apply animation */
+  }
+  
+  .wall-top,
+  .wall-bottom {
+    background-color: black; /* Juster fargen etter behov */
+    width: 100%;
+    position: absolute;
+    left: 0;
+  }
+  
+  .wall-top {
+    top: 50%;
+  
+  }
+  
+  .wall-bottom {
+    bottom: 50%;
+  
+  }
+  .dropdownShop {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdownShop-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 50vh; /* Set width to 40% */
+    height: 40vh; /* Set height to 15% */
+    top: calc(100% + 18px); /* Place the dropdown below the container with some spacing */
+    left: 0; /* Align with the left side of the container */
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: start;
+    overflow: hidden;
+    border: 1.4px solid whitesmoke;
+  }
+  
+  
+  .boxseca {
+    position: relative;
+    display: flex;
+    padding-inline-start: 25px;
+    left: 50px;
+    cursor: pointer;
+  }
+  
+  
+  .SearchInput{
+  text-align: center;
+  justify-content: center;
+  font-size: medium;
+  position: fixed;
+  }
+  
+  .boxseca input {
+  width: 250px;
+  right:240px;
+  height: 3vh;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  
+  }
+  .boxseca img:first-child {
+    position: fixed;
+    margin-left: 50px; 
+  
+  }
+  /* Show input on hover */
+  .boxseca:hover input {
+    display: block;
+    position: fixed;
+  }
+  
+  .dropdownShop-content a {
+    color: black;
+    padding: 12px 0; /* Adjust padding to your preference */
+    text-decoration: none;
+    display: block; /* Ensure each item takes up a full row */
+    width: 100%; /* Make each dropdown item full width */
+    text-align: center; /* Center the text horizontally */
+    z-index: 4;
+  }
+  
+  .dropdownShop:hover .dropdownShop-content {
+    display: block;
+  }
+  
+  
+  .LR-Logo{
+  height: 85%;
+  width: 2.7%;
+  left: 0;
+  top:4px;
+  position: absolute;
+  border-radius: 30px;
+  }
+  
+  .LabelContainer .active {
+    color: blue;
+  }
+  
+  
+  .LabelContainer label:hover {
+    color: white; 
+  }
+  
+  
+  /* Define animation */
+  @keyframes growAndShadow {
+    0% {
+      transform: scale(1);
+      box-shadow: none;
+    }
+    50% {
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    100% {
+      transform: scale(1.1);
+      box-shadow: none;
+    }
+  }
+  
+  /* Apply animation to logo image on hover */
+  .LR-Logo:hover {
+    animation: growAndShadow 3s ease-out infinite; /* Apply the animation */
+  }
+  /* Define animation */
+  @keyframes growAndShadow {
+    0% {
+      transform: scale(1);
+      box-shadow: none;
+    }
+    50% {
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: none;
+    }
+  }
+  
+  
+  .Cart-Container{
+  position: absolute;
+  width: 400px;
+  left: -13vh;
+  margin-right: 0;
+  background-color: white;
+  height: 94vh;
+  top: 5vh;
+  overflow: hidden;
+  transform: translateX(100%);
+  animation: slide-in 0.5s forwards;
+  }
+  
+  @keyframes slide-in {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  .ProductImg{
+    cursor: pointer;
+  }
+  
+  .CartCloseCheckout{
+    position: absolute;
+    display: grid;
+    bottom: 0;
+    width: 100%;
+    height: 110px;
+    left:0;
+  }
+  
+  
+  .Checkout{
+    cursor: pointer;
+  }
+  .AddToCartButton{
+    cursor: pointer;
+  }
+  .Close{
+    cursor: pointer;
+  }
+  
+  .item{
+  width:100%;
+  border: 2px solid grey;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-wrap:wrap ;
+  height:9vh;
+  
+  }
+  
+  
+  /* Add this to your existing CSS file */
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+  }
+  
+  .product-container {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    display: flex;
+  }
+  
+  
+  
+  
+  
+  
+  @keyframes slideRight {
+    0% {
+      right: -400px; /* Start off-screen to the right */
+    }
+    100% {
+      right: 0; /* End position */
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  .productcard-size
+  {
+  
+  }
+  
+  
+  .sizes {
+    display: grid;
+    position: absolute;
+    bottom: 220px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: x-large;
+    color: white;
+    grid-template-columns: repeat(auto-fill, 73px);
+    width: 100%;
+    grid-gap: 40px;
+    margin-left: 50px;
+    margin-top: 5px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  
+  .priceanddescription-productcard{
+  display: grid;
+  position: relative;
+  top: 30px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  
+  }
+  
+  .description-productcard{
+  
+  }
+  
+  .price-productcard{
+  
+  }
+  
+  .page-container {
+    position: relative; /* Add relative positioning to this container */
+    display: flex;
+  }
+  
+  
+  .product-container{
+  display: flex;
+  }
+  
+  
+  
+  
+  .title-productcard{
+  
+  
+  }
+  
+  .Product-cart {
+    width: 750px;
+    height: 750px;
+  background-color: grey;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    color: white; /* Ensures text is visible on black background */
+    cursor: pointer;
+  }
+  
+  
+  .productcard-img{
+  width: 25vh;
+  display: flex;
+  }
+  
+  .cartimg{
+  
+    cursor: pointer;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+  @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+:root {
+  --light-grey: #F6F9FC;
+  --dark-terminal-color: #0A2540;
+  --accent-color: #635BFF;
+  --radius: 3px;
+}
+
+.checkout-panel {
+  padding: 20px;
+  font-family: 'Raleway';
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top:25vh;
+  font-size: 1.2em;
+  color: var(--dark-terminal-color);
+
+}
+
+.Main-Container{
+background-color: black;
+height: 100vh;
+width: 100%;
+
+}
+main {
+  width: 480px;
+}
+
+form > * {
+  margin: 10px 0;
+}
+
+button {
+  background-color: var(--accent-color);
+}
+
+button {
+  background: var(--accent-color);
+  border-radius: var(--radius);
+  color: white;
+  border: 0;
+  padding: 12px 16px;
+  margin-top: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: block;
+}
+button:hover {
+  filter: contrast(115%);
+}
+button:active {
+  transform: translateY(0px) scale(0.98);
+  filter: brightness(0.9);
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: none;
+}
+
+input, select {
+  display: block;
+  font-size: 1.1em;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.TitleHeader{
+  color: white;
+  font-size: xx-large;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 15vh;
+}
+label {
+  display: block;
+}
+
+a {
+  color: var(--accent-color);
+  font-weight: 900;
+}
+
+small {
+  font-size: .6em;
+}
+
+fieldset, input, select {
+  border: 1px solid #efefef;
+}
+
+#payment-form {
+  border: #F6F9FC solid 1px;
+  border-radius: var(--radius);
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 30px 50px -20px rgb(50 50 93 / 25%), 0 30px 60px -30px rgb(0 0 0 / 30%);
+  background-color: white;
+}
+
+#messages {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New';
+  display: none; /* hide initially, then show once the first message arrives */
+  background-color: #0A253C;
+  color: #00D924;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: var(--radius);
+  font-size:0.7em;
+}
+
+
+
+
+
+
+
+
+.Container-Landingpage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    height: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+  }
+  
+  .Background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  
+  .TrainerImg {
+  width: auto; /* Ensures the image never overflows its container */
+    height: 100%;     /* Maintains aspect ratio */
+    z-index: 2;
+    right: 0;
+    position: fixed;
+  }
+  
+  .LionImg{
+    width: auto;
+    z-index: 2;
+    position: fixed;
+    left: 0;
+    height: 100%;
+  }
+  
+  /* Media Query for smaller devices like iPhones */
+  @media (max-width: 768px) {
+    .TrainerImg {
+      width: 50%;   /* Adjust the width percentage as needed */
+      height: auto;
+      right: 10px;  /* Optional: Adjust the positioning if necessary */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .TrainerImg {
+      width: 80%;   /* On very small devices like iPhone SE, etc. */
+      height: auto;
+      right: 5px;   /* Adjust positioning to avoid image overflow */
+    }
+  }
+  /* Media Query for smaller devices like iPhones */
+  @media (max-width: 768px) {
+    .LionImg {
+      width: 50%;   /* Adjust the width percentage as needed */
+      height: auto;
+      right: 10px;  /* Optional: Adjust the positioning if necessary */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .LionImg {
+      width: 80%;   /* On very small devices like iPhone SE, etc. */
+      height: auto;
+      right: 5px;   /* Adjust positioning to avoid image overflow */
+    }
+  }
+  
+  
+  .navbar-Landingpage {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 0;
+    z-index: 10;
+  }
+  
+  .navbar-Landingpage ul {
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+    list-style: none;
+  }
+  
+  .navbar-Landingpage ul li {
+    margin: 0 15px;
+  }
+  
+  .navbar-Landingpage ul li a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-style: oblique;
+    text-shadow: 0 0 10px rgba(17, 167, 204, 0.5);
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-Landingpage ul li a:hover {
+    color: #009688;
+  }
+  .navbar-Landingpage ul li {
+    position: relative; /* Ensure ::after is positioned relative to the li */
+  }.navbar-Landingpage ul li::after {
+    content: '';
+    height: 3px;
+    background: #009688;
+    position: absolute;
+    left: 50%; /* Start from the center */
+    transform: translateX(-50%); /* Shift back by 50% of its width */
+    width: 0; /* Initially hidden */
+    bottom: -5px;
+    transition: width 0.3s ease; /* Smooth animation */
+  }
+  .navbar-Landingpage ul li:hover::after {
+    width: 100%; /* Expand to the full width of the text */
+  }
+  
+  @media (max-width: 768px) {
+    .navbar-Landingpage ul {
+      flex-direction: column;
+      width: 100%;
+    }
+  
+    .navbar-Landingpage ul li {
+      margin: 10px 0;
+    }
+  }
+  .Intro-text {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    left:10vh;
+    position: relative;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .Intro-text h1 {
+    font-size: 2.5rem; /* Adjust for your preferred size */
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  .UnderLine{
+    z-index: 6;
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 2;
+    margin-top: 10px;
+    color: rgba(192, 173, 173, 0.8); /* Slight transparency for contrast */
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .Intro-text h1 {
+      font-size: 2rem;
+    }
+  
+    .UnderLine {
+      font-size: 1rem;
+      max-width: 90%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .Intro-text h1 {
+      font-size: 1.5rem;
+    }
+  
+    .UnderLine {
+      font-size: 0.9rem;
+      max-width: 95%;
+    }
+  }

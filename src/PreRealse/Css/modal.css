@@ -1,0 +1,50 @@
+/* Modal.css */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7); /* Dark overlay */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1; /* Ensure the modal appears above other content */
+  }
+  
+  .modal-content {
+    background: black;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 95%; /* Make modal width responsive */
+    max-width: 600px; /* Set a maximum width */
+    align-items: center;
+    opacity: 0.9;
+    color: white;
+    z-index: 2;
+    height: auto;
+    
+  }
+  
+  h2 {
+    font-size: 1.0rem; /* Responsive font size for the heading */
+    color: white;
+  }
+  
+  .ModalButton {
+    margin-top: 90px; /* Add space above the close button */
+    
+  }
+ul{
+  text-align: center;
+  color: white;
+  margin-top: 15px;
+
+}
+  p{
+    color: white;
+    margin-top: 85px;
+    text-align: center;
+  }
+  
